@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+		<property name="hibernate.connection.password">root</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/ivoniart</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+		<property name="use_sql_comments">false</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<mapping class="com.ganesha.basicweb.model.accesspath.AccessPath" />
+		<mapping class="com.ganesha.basicweb.model.module.Module" />
+		<mapping class="com.ganesha.basicweb.model.user.SimpleUser" />
+		<mapping class="com.ganesha.basicweb.model.usergroup.UserGroup" />
+		<mapping class="com.ganesha.basicweb.model.activitylog.ActivityLog" />
+		<mapping class="com.ganesha.ivo.ivoniart.model.event.Event" />
+		<mapping class="com.ganesha.ivo.ivoniart.model.menuabout.MenuAbout" />
+		<mapping class="com.ganesha.ivo.ivoniart.model.menucontact.MenuContact" />
+		<mapping class="com.ganesha.ivo.ivoniart.model.menueventandnews.MenuEventAndNews" />
+		<mapping class="com.ganesha.ivo.ivoniart.model.menuhome.MenuHome" />
+		<mapping class="com.ganesha.ivo.ivoniart.model.menumusics.MenuMusics" />
+		<mapping class="com.ganesha.ivo.ivoniart.model.menuservices.MenuServices" />
+		<mapping class="com.ganesha.ivo.ivoniart.model.news.News" />
+		<mapping class="com.ganesha.ivo.ivoniart.model.picture.Picture" />
+		<mapping class="com.ganesha.ivo.ivoniart.model.service.Service" />
+		<mapping class="com.ganesha.ivo.ivoniart.model.song.Song" />
+	</session-factory>
+</hibernate-configuration>

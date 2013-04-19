@@ -1,0 +1,4 @@
+com.ganesha.client=com.ganesha.ivo
+com.ganesha.client.basepackage=com.ganesha.ivo.ivoniart
+com.ganesha.client.basepackage.modules=com.ganesha.ivo.ivoniart.modules
+com.ganesha.client.basepackage.model=com.ganesha.ivo.ivoniart.model
