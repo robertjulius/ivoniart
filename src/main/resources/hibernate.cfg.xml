@@ -18,6 +18,7 @@
 		<mapping class="com.ganesha.basicweb.model.user.SimpleUser" />
 		<mapping class="com.ganesha.basicweb.model.usergroup.UserGroup" />
 		<mapping class="com.ganesha.basicweb.model.activitylog.ActivityLog" />
+		<mapping class="com.ganesha.basicweb.model.systemsetting.SystemSetting" />
 		<mapping class="com.ganesha.ivo.ivoniart.model.event.Event" />
 		<mapping class="com.ganesha.ivo.ivoniart.model.menuabout.MenuAbout" />
 		<mapping class="com.ganesha.ivo.ivoniart.model.menucontact.MenuContact" />
