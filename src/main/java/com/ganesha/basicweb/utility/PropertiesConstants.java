@@ -27,5 +27,6 @@ public class PropertiesConstants {
 	public static final String ERROR_ROLLBACK_BUSINESS_LOGIC = "error.rollback.business.logic";
 
 	public static final String SYSTEM_DIRECTORY_FILE_PICTURES = "system.directory.file.pictures";
-
+	public static final String SYSTEM_DIRECTORY_TEMP = "system.directory.temp";
+	public static final String SYSTEM_DIRECTORY = "system.directory";
 }

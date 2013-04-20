@@ -13,7 +13,7 @@ import com.ganesha.basicweb.utility.PropertiesConstants;
 import com.ganesha.core.exception.AppException;
 import com.ganesha.struts2.BaseAction;
 
-public class ImageAction extends BaseAction {
+public class ResourceAction extends BaseAction {
 
 	private static final long serialVersionUID = -4092586222617366019L;
 	private String path;
@@ -26,9 +26,10 @@ public class ImageAction extends BaseAction {
 		BufferedOutputStream bufferedOutputStream = null;
 
 		try {
-			String fullImagePath = SystemSetting
-					.getProperty(PropertiesConstants.SYSTEM_DIRECTORY_FILE_PICTURES)
-					+ File.separator + path;
+			String fullImagePath = new StringBuilder(
+					SystemSetting
+							.getProperty(PropertiesConstants.SYSTEM_DIRECTORY))
+					.append(File.separator).append(path).toString();
 
 			bufferedInputStream = new BufferedInputStream(new FileInputStream(
 					new File(fullImagePath)));
