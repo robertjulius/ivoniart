@@ -8,61 +8,36 @@ import org.apache.struts2.dispatcher.SessionMap;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.ganesha.basicweb.modules.BusinessLogic;
 import com.ganesha.basicweb.modules.ModuleSession;
 import com.ganesha.basicweb.utility.GeneralConstants;
-import com.ganesha.basicweb.utility.PropertiesConstants;
 import com.ganesha.core.UserSession;
-import com.ganesha.core.exception.AppException;
 import com.opensymphony.xwork2.ActionSupport;
 
-public abstract class BaseAction<T> extends ActionSupport implements
-		SessionAware, ServletRequestAware {
+public abstract class BaseAction extends ActionSupport implements SessionAware,
+		ServletRequestAware {
 
 	private static final long serialVersionUID = -3643549719278354411L;
 
 	private SessionMap<String, Object> sessionMap;
 	private HttpServletRequest request;
-	private T logic;
-
-	public BaseAction(Class<T> clazz) throws AppException {
-		try {
-			if (BusinessLogic.class.isAssignableFrom(clazz)) {
-				this.logic = clazz.newInstance();
-			} else {
-				throw new AppException(
-						PropertiesConstants.ERROR_CREATE_BUSINESS_LOGIC);
-			}
-		} catch (InstantiationException e) {
-			throw new AppException(
-					PropertiesConstants.ERROR_CREATE_BUSINESS_LOGIC);
-		} catch (IllegalAccessException e) {
-			throw new AppException(
-					PropertiesConstants.ERROR_CREATE_BUSINESS_LOGIC);
-		}
-	}
 
 	public final String chainAction() {
 		return SUCCESS;
 	}
 
-	public T getBL() {
-		return logic;
-	}
-
-	public ModuleSession getModuleSession() {
+	public final ModuleSession getModuleSession() {
 		return (ModuleSession) sessionMap.get(GeneralConstants.MODULE_SESSION);
 	}
 
-	public HttpServletRequest getRequest() {
+	public final HttpServletRequest getRequest() {
 		return request;
 	}
 
-	public SessionMap<String, Object> getSession() {
+	public final SessionMap<String, Object> getSession() {
 		return sessionMap;
 	}
 
-	public UserSession getUserSession() {
+	public final UserSession getUserSession() {
 		return (UserSession) getSession().get(GeneralConstants.USER_SESSION);
 	}
 
