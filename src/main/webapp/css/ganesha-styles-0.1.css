@@ -1,0 +1,21 @@
+.pageTitle1 {
+	font-size: x-large;
+	font-weight: bold;
+	color: black;
+	padding-top: 20px;
+}
+
+.pageTitle2 {
+	font-size: larger;
+	font-weight: bold;
+	color: gray;
+	padding-bottom: 20px;
+}
+
+.imageFrame {
+	background-color: #FFFFFF;
+	border-color: #999999;
+	border-style: solid;
+	border-width: 1px;
+	padding: 3px;
+}

@@ -129,8 +129,8 @@
 			class="com.ganesha.ivo.ivoniart.modules.picturemaintenance.action.PictureMaintenanceCreateAction"
 			method="validateCreate">
 			<interceptor-ref name="fileUpload">
-				<param name="allowedTypes">text/plain</param>
-				<param name="maximumSize">5000000</param>
+				<param name="allowedTypes">image/jpeg</param>
+				<param name="maximumSize">1048576</param>
 			</interceptor-ref> 
 			<interceptor-ref name="appDefault"></interceptor-ref>
 			<result name="success" type="chain">confirmCreate

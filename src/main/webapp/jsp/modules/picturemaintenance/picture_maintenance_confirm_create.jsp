@@ -18,6 +18,11 @@
 		</tr>
 	</table>
 	<s:form action="/modules/picturemaintenance/executeCreate.action" theme="simple">
+		<table>
+			<tr>
+				<td><img src="<%=request.getContextPath()%>/resources/resource.action?path=temp/<s:property value="fileUploadFileName" />" height="300px" class="imageFrame" /></td>
+			</tr>
+		</table>
 		<s:if test="hasActionErrors()">
 			<table>
 				<s:actionerror />

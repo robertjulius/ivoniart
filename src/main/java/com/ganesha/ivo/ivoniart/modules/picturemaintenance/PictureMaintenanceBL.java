@@ -1,14 +1,19 @@
 package com.ganesha.ivo.ivoniart.modules.picturemaintenance;
 
+import java.io.File;
+import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 
 import com.ganesha.basicweb.model.Pagination;
+import com.ganesha.basicweb.model.systemsetting.SystemSetting;
 import com.ganesha.basicweb.modules.BusinessLogic;
+import com.ganesha.basicweb.utility.CommonUtils;
 import com.ganesha.basicweb.utility.GeneralConstants;
 import com.ganesha.basicweb.utility.GeneralConstants.ActionType;
 import com.ganesha.basicweb.utility.PropertiesConstants;
@@ -18,8 +23,9 @@ import com.ganesha.ivo.ivoniart.model.picture.Picture;
 
 public class PictureMaintenanceBL extends BusinessLogic {
 
-	public void create(String newDescription, String newComment,
-			String createBy, Timestamp createDate) throws AppException {
+	public void create(File fileUpload, String newDescription,
+			String newComment, String createBy, Timestamp createDate)
+			throws AppException {
 
 		try {
 			beginTransaction();
@@ -28,6 +34,8 @@ public class PictureMaintenanceBL extends BusinessLogic {
 			 * TODO Auto-generated method stub Define your own object
 			 */
 			Picture picture = new Picture();
+			picture.setId(String.valueOf(CommonUtils.getCurrentTimestamp()
+					.getTime()));
 			picture.setDescription(newDescription);
 			picture.setComment(newComment);
 			picture.setCreateBy(createBy);
@@ -39,9 +47,22 @@ public class PictureMaintenanceBL extends BusinessLogic {
 			getSession().save(picture);
 			saveActivityLog(ActionType.CREATE, picture);
 
-			commit();
-		} finally {
+			File newFile = new File(
+					new StringBuilder(
+							SystemSetting
+									.getProperty(PropertiesConstants.SYSTEM_DIRECTORY_FILE_PICTURES))
+							.append(File.separator).append(picture.getId())
+							.toString());
 
+			if (!newFile.getParentFile().exists()) {
+				FileUtils.forceMkdir(newFile.getParentFile());
+			}
+			FileUtils.copyFile(fileUpload, newFile);
+
+			commit();
+		} catch (IOException e) {
+			rollback();
+			throw new AppException(e);
 		}
 	}
 

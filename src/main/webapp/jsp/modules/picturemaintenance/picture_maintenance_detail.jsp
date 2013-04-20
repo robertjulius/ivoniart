@@ -18,6 +18,11 @@
 		</tr>
 	</table>
 	<s:form theme="simple">
+		<table>
+			<tr>
+				<td><img src="<%=request.getContextPath()%>/resources/resource.action?path=images/<s:property value="selectedId" />" height="300px" class="imageFrame" /></td>
+			</tr>
+		</table>
 		<s:if test="hasActionErrors()">
 			<table>
 				<s:actionerror />

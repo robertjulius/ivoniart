@@ -31,16 +31,19 @@ public class ResourceAction extends BaseAction {
 							.getProperty(PropertiesConstants.SYSTEM_DIRECTORY))
 					.append(File.separator).append(path).toString();
 
-			bufferedInputStream = new BufferedInputStream(new FileInputStream(
-					new File(fullImagePath)));
-			bufferedOutputStream = new BufferedOutputStream(
-					response.getOutputStream());
+			File file = new File(fullImagePath);
+			if (file.exists()) {
+				bufferedInputStream = new BufferedInputStream(
+						new FileInputStream(file));
+				bufferedOutputStream = new BufferedOutputStream(
+						response.getOutputStream());
 
-			byte[] buffer = new byte[1024];
-			for (int length; (length = bufferedInputStream.read(buffer)) > -1;) {
-				bufferedOutputStream.write(buffer, 0, length);
+				byte[] buffer = new byte[1024];
+				for (int length; (length = bufferedInputStream.read(buffer)) > -1;) {
+					bufferedOutputStream.write(buffer, 0, length);
+				}
+				bufferedOutputStream.flush();
 			}
-			bufferedOutputStream.flush();
 		} catch (IOException e) {
 			throw new AppException(e);
 		} finally {
