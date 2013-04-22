@@ -50,7 +50,7 @@ public class PictureMaintenanceBL extends BusinessLogic {
 			File newFile = new File(
 					new StringBuilder(
 							SystemSetting
-									.getProperty(PropertiesConstants.SYSTEM_DIRECTORY_FILE_PICTURES))
+									.getProperty(PropertiesConstants.SYSTEM_DIRECTORY_FILE_IMAGES))
 							.append(File.separator).append(picture.getId())
 							.toString());
 
