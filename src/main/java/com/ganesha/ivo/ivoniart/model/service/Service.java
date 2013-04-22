@@ -1,5 +1,6 @@
 package com.ganesha.ivo.ivoniart.model.service;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -29,6 +30,8 @@ public class Service extends Trackable {
 	private Picture picture;
 
 	private String title;
+
+	@Column(length = 1024)
 	private String content;
 
 	public String getContent() {

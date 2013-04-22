@@ -29,8 +29,12 @@ public class MenuAboutMaintenanceUpdateAction extends
 
 	public String prepareUpdate() throws AppException {
 		MenuAboutMaintenanceForm form = getForm();
+
 		form.clearForm("new");
 		form.assignFromEntity("new", form.getOld());
+
+		form.setNewPictureId(form.getOld().getPicture().getId());
+		form.setNewPictureTitle(form.getOld().getPicture().getTitle());
 
 		return SUCCESS;
 	}
