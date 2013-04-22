@@ -40,8 +40,8 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td align="right" width="100px"><s:text name="resource.description" /></td>
-								<td align="left" width="300px"><s:label name="newDescription" /></td>
+								<td align="right" width="100px"><s:text name="resource.title" /></td>
+								<td align="left" width="300px"><s:label name="newTitle" /></td>
 							</tr>
 							<tr>
 								<td align="right" width="100px"><s:text name="resource.comment" /></td>

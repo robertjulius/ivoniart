@@ -1,9 +1,9 @@
 package com.ganesha.ivo.ivoniart.modules.picturemaintenance.action;
 
 import com.ganesha.basicweb.model.user.SimpleUser;
-import com.ganesha.ivo.ivoniart.modules.picturemaintenance.PictureMaintenanceForm;
 import com.ganesha.basicweb.utility.CommonUtils;
 import com.ganesha.core.exception.AppException;
+import com.ganesha.ivo.ivoniart.modules.picturemaintenance.PictureMaintenanceForm;
 
 public class PictureMaintenanceUpdateAction extends PictureMaintenanceAction {
 
@@ -12,19 +12,20 @@ public class PictureMaintenanceUpdateAction extends PictureMaintenanceAction {
 	public PictureMaintenanceUpdateAction() throws AppException {
 		super();
 	}
-	
+
 	public String executeUpdate() throws AppException {
 		// TODO Auto-generated method stub
 		SimpleUser user = (SimpleUser) getUserSession().getUser();
 
 		PictureMaintenanceForm form = getForm();
-		String newDescription = form.getNewDescription();
+		String newTitle = form.getNewTitle();
 		String newComment = form.getNewComment();
-		getBL().update(form.getSelectedId(), newDescription, newComment, user.getId(), CommonUtils.getCurrentTimestamp());
+		getBL().update(form.getSelectedId(), newTitle, newComment,
+				user.getId(), CommonUtils.getCurrentTimestamp());
 
 		return SUCCESS;
 	}
-	
+
 	public String prepareUpdate() throws AppException {
 		// TODO Auto-generated method stub
 		PictureMaintenanceForm form = getForm();
@@ -33,7 +34,7 @@ public class PictureMaintenanceUpdateAction extends PictureMaintenanceAction {
 
 		return SUCCESS;
 	}
-	
+
 	public String validateUpdate() throws AppException {
 		// TODO Auto-generated method stub
 		if (validateForm()) {

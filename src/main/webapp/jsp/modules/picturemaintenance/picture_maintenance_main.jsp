@@ -43,7 +43,7 @@
 							<s:form action="/modules/picturemaintenance/search.action" method="post">
 								<s:actionerror />
 								<s:fielderror />
-								<s:textfield key="resource.description" name="searchDescription" />
+								<s:textfield key="resource.title" name="searchTitle" />
 								<s:textfield key="resource.comment" name="searchComment" />
 								<s:select key="resource.rowsPerPage" list="pagination.availableRowsPerPage" name="pagination.rowsPerPage" />
 								<s:hidden name="pagination.pageNumber" value="1" />
@@ -65,14 +65,14 @@
 						<table class="grid">
 							<thead>
 								<tr align="center">								
-									<td width="150"><s:text name="resource.description" /></td>
+									<td width="150"><s:text name="resource.title" /></td>
 									<td width="150"><s:text name="resource.comment" /></td>
 								</tr>
 							</thead>
 							<tbody class="selectable">
 								<s:iterator value="searchResult" status="rowstatus">
 									<tr onclick="$(this).closest('form').find('input#prepareDetail_selectedId').val('<s:property value="id" />'); $(this).closest('form').submit();" class="<s:if test='#rowstatus.odd == true'>rowOdd</s:if><s:else>rowEven</s:else>">
-										<td><s:property value="description" /></td>
+										<td><s:property value="title" /></td>
 										<td><s:property value="comment" /></td>
 									</tr>
 								</s:iterator>

@@ -16,30 +16,30 @@ public class Picture extends Trackable {
 	@Id
 	private String id;
 
-	private String description;
+	private String title;
 	private String comment;
 
 	public String getComment() {
 		return comment;
 	}
 
-	public String getDescription() {
-		return description;
-	}
-
 	public String getId() {
 		return id;
+	}
+
+	public String getTitle() {
+		return title;
 	}
 
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 }

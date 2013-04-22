@@ -34,7 +34,7 @@
 				<td>
 					<table>
 						<s:file name="fileUpload" label="Picture File" theme="xhtml" size="35px" />
-						<s:textfield key="resource.description" name="newDescription" theme="xhtml" size="30px" />
+						<s:textfield key="resource.title" name="newTitle" theme="xhtml" size="30px" />
 						<s:textfield key="resource.comment" name="newComment" theme="xhtml" size="30px" />
 					</table>
 				</td>

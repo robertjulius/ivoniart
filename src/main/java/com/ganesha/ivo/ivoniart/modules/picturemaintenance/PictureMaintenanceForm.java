@@ -13,7 +13,7 @@ public class PictureMaintenanceForm extends FormBean {
 
 	private static final long serialVersionUID = 1L;
 
-	private String searchDescription;
+	private String searchTitle;
 	private String searchComment;
 
 	private Pagination pagination;
@@ -22,7 +22,7 @@ public class PictureMaintenanceForm extends FormBean {
 	private String selectedId;
 	private Picture old;
 
-	private String newDescription;
+	private String newTitle;
 	private String newComment;
 
 	private File fileUpload;
@@ -45,8 +45,8 @@ public class PictureMaintenanceForm extends FormBean {
 		return newComment;
 	}
 
-	public String getNewDescription() {
-		return newDescription;
+	public String getNewTitle() {
+		return newTitle;
 	}
 
 	public Picture getOld() {
@@ -61,12 +61,12 @@ public class PictureMaintenanceForm extends FormBean {
 		return searchComment;
 	}
 
-	public String getSearchDescription() {
-		return searchDescription;
-	}
-
 	public List<Picture> getSearchResult() {
 		return searchResult;
+	}
+
+	public String getSearchTitle() {
+		return searchTitle;
 	}
 
 	public String getSelectedId() {
@@ -89,8 +89,8 @@ public class PictureMaintenanceForm extends FormBean {
 		this.newComment = newComment;
 	}
 
-	public void setNewDescription(String newDescription) {
-		this.newDescription = newDescription;
+	public void setNewTitle(String newTitle) {
+		this.newTitle = newTitle;
 	}
 
 	public void setOld(Picture old) {
@@ -105,12 +105,12 @@ public class PictureMaintenanceForm extends FormBean {
 		this.searchComment = searchComment;
 	}
 
-	public void setSearchDescription(String searchDescription) {
-		this.searchDescription = searchDescription;
-	}
-
 	public void setSearchResult(List<Picture> searchResult) {
 		this.searchResult = searchResult;
+	}
+
+	public void setSearchTitle(String searchTitle) {
+		this.searchTitle = searchTitle;
 	}
 
 	public void setSelectedId(String selectedId) {

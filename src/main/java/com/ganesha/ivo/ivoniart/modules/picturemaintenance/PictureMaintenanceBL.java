@@ -23,9 +23,8 @@ import com.ganesha.ivo.ivoniart.model.picture.Picture;
 
 public class PictureMaintenanceBL extends BusinessLogic {
 
-	public void create(File fileUpload, String newDescription,
-			String newComment, String createBy, Timestamp createDate)
-			throws AppException {
+	public void create(File fileUpload, String newTitle, String newComment,
+			String createBy, Timestamp createDate) throws AppException {
 
 		try {
 			beginTransaction();
@@ -36,7 +35,7 @@ public class PictureMaintenanceBL extends BusinessLogic {
 			Picture picture = new Picture();
 			picture.setId(String.valueOf(CommonUtils.getCurrentTimestamp()
 					.getTime()));
-			picture.setDescription(newDescription);
+			picture.setTitle(newTitle);
 			picture.setComment(newComment);
 			picture.setCreateBy(createBy);
 			picture.setCreateDate(createDate);
@@ -104,14 +103,13 @@ public class PictureMaintenanceBL extends BusinessLogic {
 		return (Picture) criteria.uniqueResult();
 	}
 
-	public List<Picture> search(String searchDescription, String searchComment,
+	public List<Picture> search(String searchTitle, String searchComment,
 			Pagination pagination) throws AppException {
 		// TODO Auto-generated method stub
 		Criteria criteria = getSession().createCriteria(Picture.class);
 
-		if (searchDescription != null && !searchDescription.trim().isEmpty()) {
-			criteria.add(Restrictions.like("description", "%"
-					+ searchDescription + "%"));
+		if (searchTitle != null && !searchTitle.trim().isEmpty()) {
+			criteria.add(Restrictions.like("title", "%" + searchTitle + "%"));
 		}
 
 		if (searchComment != null && !searchComment.trim().isEmpty()) {
@@ -138,7 +136,7 @@ public class PictureMaintenanceBL extends BusinessLogic {
 		return pictures;
 	}
 
-	public void update(String id, String newDescription, String newComment,
+	public void update(String id, String newTitle, String newComment,
 			String updateBy, Timestamp updateDate) throws AppException {
 
 		beginTransaction();
@@ -147,7 +145,7 @@ public class PictureMaintenanceBL extends BusinessLogic {
 		 * TODO Auto-generated method stub Define your own object
 		 */
 		Picture picture = (Picture) getSession().load(Picture.class, id);
-		picture.setDescription(newDescription);
+		picture.setTitle(newTitle);
 		picture.setComment(newComment);
 		picture.setUpdateBy(updateBy);
 		picture.setUpdateDate(updateDate);

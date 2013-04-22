@@ -20,11 +20,11 @@ public class PictureMaintenanceCreateAction extends PictureMaintenanceAction {
 		SimpleUser user = (SimpleUser) getUserSession().getUser();
 
 		PictureMaintenanceForm form = getForm();
-		String newDescription = form.getNewDescription();
+		String newTitle = form.getNewTitle();
 		String newComment = form.getNewComment();
 		File fileUpload = form.getFileUpload();
 
-		getBL().create(fileUpload, newDescription, newComment, user.getId(),
+		getBL().create(fileUpload, newTitle, newComment, user.getId(),
 				CommonUtils.getCurrentTimestamp());
 
 		return SUCCESS;

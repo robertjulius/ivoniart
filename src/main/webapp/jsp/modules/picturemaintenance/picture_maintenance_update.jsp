@@ -33,7 +33,7 @@
 			<tr>
 				<td>
 					<table>
-						<s:textfield key="resource.description" name="newDescription" theme="xhtml" size="30px" />
+						<s:textfield key="resource.title" name="newTitle" theme="xhtml" size="30px" />
 						<s:textfield key="resource.comment" name="newComment" theme="xhtml" size="30px" />
 					</table>
 				</td>
