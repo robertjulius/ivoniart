@@ -1,5 +1,6 @@
 package com.ganesha.ivo.ivoniart.model.menuabout;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -29,6 +30,8 @@ public class MenuAbout extends Trackable {
 	private Picture picture;
 
 	private String title;
+
+	@Column(length = 10240)
 	private String content;
 
 	public String getContent() {

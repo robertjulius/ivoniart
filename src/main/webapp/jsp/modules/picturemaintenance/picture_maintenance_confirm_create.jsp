@@ -41,11 +41,11 @@
 						<tbody>
 							<tr>
 								<td align="right" width="100px"><s:text name="resource.title" /></td>
-								<td align="left" width="300px"><s:label name="newTitle" /></td>
+								<td align="left" width="300px"><s:property value="newTitle" /></td>
 							</tr>
 							<tr>
 								<td align="right" width="100px"><s:text name="resource.comment" /></td>
-								<td align="left" width="300px"><s:label name="newComment" /></td>
+								<td align="left" width="300px"><s:property value="newComment" /></td>
 							</tr>
 						</tbody>
 					</table>

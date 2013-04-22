@@ -19,19 +19,25 @@ public class MenuAboutMaintenanceForm extends FormBean {
 	private Pagination pagination;
 	private List<MenuAbout> searchResult;
 
-	private String selectedId;
 	private MenuAbout old;
 
-	private Picture newPicture;
+	private String newPictureId;
+	private String newPictureTitle;
 	private String newTitle;
 	private String newContent;
+
+	private List<Picture> selectListPicture;
 
 	public String getNewContent() {
 		return newContent;
 	}
 
-	public Picture getNewPicture() {
-		return newPicture;
+	public String getNewPictureId() {
+		return newPictureId;
+	}
+
+	public String getNewPictureTitle() {
+		return newPictureTitle;
 	}
 
 	public String getNewTitle() {
@@ -58,16 +64,20 @@ public class MenuAboutMaintenanceForm extends FormBean {
 		return searchTitle;
 	}
 
-	public String getSelectedId() {
-		return selectedId;
+	public List<Picture> getSelectListPicture() {
+		return selectListPicture;
 	}
 
 	public void setNewContent(String newContent) {
 		this.newContent = newContent;
 	}
 
-	public void setNewPicture(Picture newPicture) {
-		this.newPicture = newPicture;
+	public void setNewPictureId(String newPictureId) {
+		this.newPictureId = newPictureId;
+	}
+
+	public void setNewPictureTitle(String newPictureTitle) {
+		this.newPictureTitle = newPictureTitle;
 	}
 
 	public void setNewTitle(String newTitle) {
@@ -94,8 +104,8 @@ public class MenuAboutMaintenanceForm extends FormBean {
 		this.searchTitle = searchTitle;
 	}
 
-	public void setSelectedId(String selectedId) {
-		this.selectedId = selectedId;
+	public void setSelectListPicture(List<Picture> selectListPicture) {
+		this.selectListPicture = selectListPicture;
 	}
 
 	@Override

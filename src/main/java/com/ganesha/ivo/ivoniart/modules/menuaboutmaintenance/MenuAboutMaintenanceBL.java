@@ -11,7 +11,6 @@ import com.ganesha.basicweb.model.Pagination;
 import com.ganesha.basicweb.modules.BusinessLogic;
 import com.ganesha.basicweb.utility.GeneralConstants;
 import com.ganesha.basicweb.utility.GeneralConstants.ActionType;
-import com.ganesha.basicweb.utility.PropertiesConstants;
 import com.ganesha.core.exception.AppException;
 import com.ganesha.core.exception.UserException;
 import com.ganesha.ivo.ivoniart.model.menuabout.MenuAbout;
@@ -19,7 +18,7 @@ import com.ganesha.ivo.ivoniart.model.picture.Picture;
 
 public class MenuAboutMaintenanceBL extends BusinessLogic {
 
-	public void create(Picture newPicture, String newTitle, String newContent,
+	public void create(String newPictureId, String newTitle, String newContent,
 			String createBy, Timestamp createDate) throws AppException {
 
 		beginTransaction();
@@ -28,7 +27,6 @@ public class MenuAboutMaintenanceBL extends BusinessLogic {
 		 * TODO Auto-generated method stub Define your own object
 		 */
 		MenuAbout menuAbout = new MenuAbout();
-		menuAbout.setPicture(newPicture);
 		menuAbout.setTitle(newTitle);
 		menuAbout.setContent(newContent);
 		menuAbout.setCreateBy(createBy);
@@ -36,6 +34,10 @@ public class MenuAboutMaintenanceBL extends BusinessLogic {
 		menuAbout.setUpdateBy(createBy);
 		menuAbout.setUpdateDate(createDate);
 		menuAbout.setRecStatus(GeneralConstants.REC_STATUS_ACTIVE);
+
+		Picture picture = (Picture) getSession().load(Picture.class,
+				newPictureId);
+		menuAbout.setPicture(picture);
 
 		getSession().save(menuAbout);
 		saveActivityLog(ActionType.CREATE, menuAbout);
@@ -65,20 +67,18 @@ public class MenuAboutMaintenanceBL extends BusinessLogic {
 		commit();
 	}
 
-	public MenuAbout getDetail(String id) throws AppException {
-		if (id == null || id.trim().isEmpty()) {
-			throw new AppException(
-					PropertiesConstants.ERROR_PRIMARY_KEY_REQUIRED);
-		}
-
-		/*
-		 * TODO Auto-generated method stub Define your own criteria
-		 */
-		Criteria criteria = getSession().createCriteria(MenuAbout.class);
-		criteria.add(Restrictions.eq("id", id));
+	public List<Picture> getAllPictures() throws AppException {
+		Criteria criteria = getSession().createCriteria(Picture.class);
 		criteria.add(Restrictions.eq("recStatus",
 				GeneralConstants.REC_STATUS_ACTIVE));
 
+		@SuppressWarnings("unchecked")
+		List<Picture> pictures = criteria.list();
+		return pictures;
+	}
+
+	public MenuAbout getDetail() throws AppException {
+		Criteria criteria = getSession().createCriteria(MenuAbout.class);
 		return (MenuAbout) criteria.uniqueResult();
 	}
 
@@ -115,22 +115,24 @@ public class MenuAboutMaintenanceBL extends BusinessLogic {
 		return menuAbouts;
 	}
 
-	public void update(String id, Picture newPicture, String newTitle,
-			String newContent, String updateBy, Timestamp updateDate)
-			throws AppException {
+	public void update(String newPictureId, String newTitle, String newContent,
+			String updateBy, Timestamp updateDate) throws AppException {
 
 		beginTransaction();
 
 		/*
 		 * TODO Auto-generated method stub Define your own object
 		 */
-		MenuAbout menuAbout = (MenuAbout) getSession()
-				.load(MenuAbout.class, id);
-		menuAbout.setPicture(newPicture);
+		MenuAbout menuAbout = (MenuAbout) getSession().createCriteria(
+				MenuAbout.class).uniqueResult();
 		menuAbout.setTitle(newTitle);
 		menuAbout.setContent(newContent);
 		menuAbout.setUpdateBy(updateBy);
 		menuAbout.setUpdateDate(updateDate);
+
+		Picture picture = (Picture) getSession().load(Picture.class,
+				newPictureId);
+		menuAbout.setPicture(picture);
 
 		getSession().save(menuAbout);
 		saveActivityLog(ActionType.UPDATE, menuAbout);
