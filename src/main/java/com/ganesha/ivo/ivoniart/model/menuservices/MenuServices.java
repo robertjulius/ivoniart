@@ -52,10 +52,6 @@ public class MenuServices extends Trackable {
 		return picture;
 	}
 
-	public List<Service> getServices() {
-		return services;
-	}
-
 	public String getTitle() {
 		return title;
 	}
@@ -70,10 +66,6 @@ public class MenuServices extends Trackable {
 
 	public void setPicture(Picture picture) {
 		this.picture = picture;
-	}
-
-	public void setServices(List<Service> services) {
-		this.services = services;
 	}
 
 	public void setTitle(String title) {
