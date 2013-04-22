@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="servicemaintenance" extends="basicweb"
+		namespace="/modules/servicemaintenance">
+
+		<!-- =================================== -->
+		<!-- ServiceMaintenanceMainAction : BEGIN -->
+		<!-- =================================== -->
+		<action name="initial"
+			class="com.ganesha.ivo.ivoniart.modules.servicemaintenance.action.ServiceMaintenanceMainAction"
+			method="initial">
+			<result name="success" type="chain">main
+			</result>
+		</action>
+
+		<action name="main"
+			class="com.ganesha.ivo.ivoniart.modules.servicemaintenance.action.ServiceMaintenanceMainAction"
+			method="chainAction">
+			<result name="success">/jsp/modules/servicemaintenance/service_maintenance_main.jsp
+			</result>
+		</action>
+
+		<action name="search"
+			class="com.ganesha.ivo.ivoniart.modules.servicemaintenance.action.ServiceMaintenanceMainAction"
+			method="search">
+			<result name="success" type="chain">searchResult
+			</result>
+		</action>
+
+		<action name="searchResult"
+			class="com.ganesha.ivo.ivoniart.modules.servicemaintenance.action.ServiceMaintenanceMainAction"
+			method="chainAction">
+			<result name="success">/jsp/modules/servicemaintenance/service_maintenance_main.jsp
+			</result>
+		</action>
+
+		<action name="prepareDetail"
+			class="com.ganesha.ivo.ivoniart.modules.servicemaintenance.action.ServiceMaintenanceMainAction"
+			method="prepareDetail">
+			<result name="success" type="chain">detail
+			</result>
+		</action>
+
+		<action name="detail"
+			class="com.ganesha.ivo.ivoniart.modules.servicemaintenance.action.ServiceMaintenanceMainAction"
+			method="chainAction">
+			<result name="success">/jsp/modules/servicemaintenance/service_maintenance_detail.jsp
+			</result>
+		</action>
+		<!-- ================================= -->
+		<!-- ServiceMaintenanceMainAction : END -->
+		<!-- ================================= -->
+
+		<!-- ===================================== -->
+		<!-- ServiceMaintenanceUpdateAction : BEGIN -->
+		<!-- ===================================== -->
+		<action name="prepareUpdate"
+			class="com.ganesha.ivo.ivoniart.modules.servicemaintenance.action.ServiceMaintenanceUpdateAction"
+			method="prepareUpdate">
+			<result name="success" type="chain">formUpdate
+			</result>
+		</action>
+
+		<action name="formUpdate"
+			class="com.ganesha.ivo.ivoniart.modules.servicemaintenance.action.ServiceMaintenanceUpdateAction"
+			method="chainAction">
+			<result name="success">/jsp/modules/servicemaintenance/service_maintenance_update.jsp
+			</result>
+		</action>
+
+		<action name="validateUpdate"
+			class="com.ganesha.ivo.ivoniart.modules.servicemaintenance.action.ServiceMaintenanceUpdateAction"
+			method="validateUpdate">
+			<result name="success" type="chain">executeUpdate
+			</result>
+			<result name="error">/jsp/modules/servicemaintenance/service_maintenance_update.jsp
+			</result>
+		</action>
+
+		<action name="executeUpdate"
+			class="com.ganesha.ivo.ivoniart.modules.servicemaintenance.action.ServiceMaintenanceUpdateAction"
+			method="executeUpdate">
+			<result name="success" type="chain">summaryUpdate
+			</result>
+			<result name="error">/jsp/modules/servicemaintenance/service_maintenance_confirm_update.jsp
+			</result>
+		</action>
+
+		<action name="summaryUpdate"
+			class="com.ganesha.ivo.ivoniart.modules.servicemaintenance.action.ServiceMaintenanceUpdateAction"
+			method="chainAction">
+			<result name="success" type="chain">search
+			</result>
+		</action>
+		<!-- =================================== -->
+		<!-- ServiceMaintenanceUpdateAction : END -->
+		<!-- =================================== -->
+
+		<!-- ===================================== -->
+		<!-- ServiceMaintenanceCreateAction : BEGIN -->
+		<!-- ===================================== -->
+		<action name="prepareCreate"
+			class="com.ganesha.ivo.ivoniart.modules.servicemaintenance.action.ServiceMaintenanceCreateAction"
+			method="prepareCreate">
+			<result name="success" type="chain">formCreate
+			</result>
+		</action>
+
+		<action name="formCreate"
+			class="com.ganesha.ivo.ivoniart.modules.servicemaintenance.action.ServiceMaintenanceCreateAction"
+			method="chainAction">
+			<result name="success">/jsp/modules/servicemaintenance/service_maintenance_create.jsp
+			</result>
+		</action>
+
+		<action name="validateCreate"
+			class="com.ganesha.ivo.ivoniart.modules.servicemaintenance.action.ServiceMaintenanceCreateAction"
+			method="validateCreate">
+			<result name="success" type="chain">executeCreate
+			</result>
+			<result name="error">/jsp/modules/servicemaintenance/service_maintenance_create.jsp
+			</result>
+		</action>
+
+		<action name="executeCreate"
+			class="com.ganesha.ivo.ivoniart.modules.servicemaintenance.action.ServiceMaintenanceCreateAction"
+			method="executeCreate">
+			<result name="success" type="chain">summaryCreate
+			</result>
+			<result name="error">/jsp/modules/servicemaintenance/service_maintenance_confirm_create.jsp
+			</result>
+		</action>
+
+		<action name="summaryCreate"
+			class="com.ganesha.ivo.ivoniart.modules.servicemaintenance.action.ServiceMaintenanceCreateAction"
+			method="chainAction">
+			<result name="success" type="chain">search
+			</result>
+		</action>
+		<!-- =================================== -->
+		<!-- ServiceMaintenanceCreateAction : END -->
+		<!-- =================================== -->
+
+		<!-- ===================================== -->
+		<!-- ServiceMaintenanceDeleteAction : BEGIN -->
+		<!-- ===================================== -->
+		<action name="executeDelete"
+			class="com.ganesha.ivo.ivoniart.modules.servicemaintenance.action.ServiceMaintenanceDeleteAction"
+			method="executeDelete">
+			<result name="success" type="chain">summaryDelete
+			</result>
+			<result name="error">/jsp/modules/servicemaintenance/service_maintenance_detail.jsp
+			</result>
+		</action>
+
+		<action name="summaryDelete"
+			class="com.ganesha.ivo.ivoniart.modules.servicemaintenance.action.ServiceMaintenanceDeleteAction"
+			method="chainAction">
+			<result name="success" type="chain">search
+			</result>
+		</action>
+		<!-- =================================== -->
+		<!-- ServiceMaintenanceDeleteAction : END -->
+		<!-- =================================== -->
+
+	</package>
+
+</struts>
