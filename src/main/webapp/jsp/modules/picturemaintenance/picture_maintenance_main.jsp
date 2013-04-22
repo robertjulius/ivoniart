@@ -58,34 +58,41 @@
 			</td>
 		</tr>
 		<s:if test="searchResult != null">
-			<tr>
-				<td>
-					<s:form action="/modules/picturemaintenance/prepareDetail.action" theme="simple">
-						<s:hidden name="selectedId" />
-						<table class="grid">
-							<thead>
-								<tr align="center">
-									<td></td>
-									<td width="150"><s:text name="resource.title" /></td>
-									<td width="150"><s:text name="resource.comment" /></td>
-								</tr>
-							</thead>
-							<tbody class="selectable">
-								<s:iterator value="searchResult" status="rowstatus">
-									<tr onclick="$(this).closest('form').find('input#prepareDetail_selectedId').val('<s:property value="id" />'); $(this).closest('form').submit();" class="<s:if test='#rowstatus.odd == true'>rowOdd</s:if><s:else>rowEven</s:else>">
-										<td align="right"><s:property value="#rowstatus.index + 1" /></td>
-										<td><s:property value="title" /></td>
-										<td><s:property value="comment" /></td>
+			<s:if test="searchResult.empty">
+				<tr align="center">
+					<td><font color="red"><b><s:text name="resource.search.result.data.empy" /></b></font></td>
+				<tr>
+			</s:if>
+			<s:else>
+				<tr>
+					<td>
+						<s:form action="/modules/picturemaintenance/prepareDetail.action" theme="simple">
+							<s:hidden name="selectedId" />
+							<table class="grid">
+								<thead>
+									<tr align="center">
+										<td></td>
+										<td width="150"><s:text name="resource.title" /></td>
+										<td width="150"><s:text name="resource.comment" /></td>
 									</tr>
-								</s:iterator>
-							</tbody>
-						</table>
-					</s:form>
-				</td>
-			</tr>
-			<tr>
-				<td><g:pagination formAction="/modules/picturemaintenance/search.action" /></td>
-			</tr>
+								</thead>
+								<tbody class="selectable">
+									<s:iterator value="searchResult" status="rowstatus">
+										<tr onclick="$(this).closest('form').find('input#prepareDetail_selectedId').val('<s:property value="id" />'); $(this).closest('form').submit();" class="<s:if test='#rowstatus.odd == true'>rowOdd</s:if><s:else>rowEven</s:else>">
+											<td align="right"><s:property value="#rowstatus.index + 1" /></td>
+											<td><s:property value="title" /></td>
+											<td><s:property value="comment" /></td>
+										</tr>
+									</s:iterator>
+								</tbody>
+							</table>
+						</s:form>
+					</td>
+				</tr>
+				<tr>
+					<td><g:pagination formAction="/modules/picturemaintenance/search.action" /></td>
+				</tr>
+			</s:else>
 		</s:if>
 	</table>
 </body>
