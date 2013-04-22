@@ -87,7 +87,7 @@
 			method="executeUpdate">
 			<result name="success" type="chain">summaryUpdate
 			</result>
-			<result name="error">/jsp/modules/servicemaintenance/service_maintenance_confirm_update.jsp
+			<result name="error" type="chain">formUpdate
 			</result>
 		</action>
 
@@ -132,7 +132,7 @@
 			method="executeCreate">
 			<result name="success" type="chain">summaryCreate
 			</result>
-			<result name="error">/jsp/modules/servicemaintenance/service_maintenance_confirm_create.jsp
+			<result name="error" type="chain">formCreate
 			</result>
 		</action>
 

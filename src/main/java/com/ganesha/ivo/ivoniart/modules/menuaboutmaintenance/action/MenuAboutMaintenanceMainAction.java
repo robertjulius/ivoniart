@@ -20,6 +20,8 @@ public class MenuAboutMaintenanceMainAction extends MenuAboutMaintenanceAction {
 		MenuAboutMaintenanceForm form = getForm();
 
 		List<Picture> pictures = getBL().getAllPictures();
+		pictures.add(0, new Picture());
+
 		form.setSelectListPicture(pictures);
 		form.setPagination(new Pagination(10));
 

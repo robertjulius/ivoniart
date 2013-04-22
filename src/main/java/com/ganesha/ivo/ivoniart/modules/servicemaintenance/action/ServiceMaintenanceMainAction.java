@@ -21,6 +21,8 @@ public class ServiceMaintenanceMainAction extends ServiceMaintenanceAction {
 		ServiceMaintenanceForm form = getForm();
 
 		List<Picture> pictures = getBL().getAllPictures();
+		pictures.add(0, new Picture());
+
 		form.setSelectListPicture(pictures);
 		form.setPagination(new Pagination(10));
 

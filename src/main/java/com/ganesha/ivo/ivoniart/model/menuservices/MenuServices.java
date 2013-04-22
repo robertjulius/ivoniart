@@ -2,6 +2,7 @@ package com.ganesha.ivo.ivoniart.model.menuservices;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -34,6 +35,8 @@ public class MenuServices extends Trackable {
 	private Picture picture;
 
 	private String title;
+
+	@Column(length = 10240)
 	private String content;
 
 	@ManyToMany

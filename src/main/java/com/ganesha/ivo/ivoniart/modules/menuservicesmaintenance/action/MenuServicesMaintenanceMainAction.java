@@ -3,49 +3,43 @@ package com.ganesha.ivo.ivoniart.modules.menuservicesmaintenance.action;
 import java.util.List;
 
 import com.ganesha.basicweb.model.Pagination;
-import com.ganesha.ivo.ivoniart.model.menuservices.MenuServices;
-import com.ganesha.ivo.ivoniart.modules.menuservicesmaintenance.MenuServicesMaintenanceForm;
 import com.ganesha.core.exception.AppException;
+import com.ganesha.ivo.ivoniart.model.menuservices.MenuServices;
+import com.ganesha.ivo.ivoniart.model.picture.Picture;
+import com.ganesha.ivo.ivoniart.model.service.Service;
+import com.ganesha.ivo.ivoniart.modules.menuservicesmaintenance.MenuServicesMaintenanceForm;
 
-public class MenuServicesMaintenanceMainAction extends MenuServicesMaintenanceAction {
+public class MenuServicesMaintenanceMainAction extends
+		MenuServicesMaintenanceAction {
 
 	private static final long serialVersionUID = 1L;
 
 	public MenuServicesMaintenanceMainAction() throws AppException {
 		super();
 	}
-	
+
 	public String initial() throws AppException {
-		// TODO Auto-generated method stub
 		MenuServicesMaintenanceForm form = getForm();
-		
+
+		List<Picture> pictures = getBL().getAllPictures();
+		pictures.add(0, new Picture());
+
+		List<Service> services = getBL().getAllServices();
+		services.add(0, new Service());
+
+		form.setSelectListPicture(pictures);
+		form.setSelectListService(services);
 		form.setPagination(new Pagination(10));
-		
+
 		return SUCCESS;
 	}
-	
-	public String prepareDetail() throws AppException {
-		// TODO Auto-generated method stub
-		MenuServicesMaintenanceForm form = getForm();
-		String selectedId = form.getSelectedId();
 
-		MenuServices menuServices = getBL().getDetail(selectedId);
+	public String prepareDetail() throws AppException {
+		MenuServicesMaintenanceForm form = getForm();
+
+		MenuServices menuServices = getBL().getDetail();
 		form.setOld(menuServices);
 
-		return SUCCESS;
-	}
-	
-	public String search() throws AppException {
-		// TODO Auto-generated method stub
-		MenuServicesMaintenanceForm form = getForm();
-		
-		String searchTitle = form.getSearchTitle();
-		String searchContent = form.getSearchContent();
-
-		Pagination pagination = getForm().getPagination();
-		List<MenuServices> menuServicess = getBL().search(searchTitle, searchContent, pagination);
-		form.setSearchResult(menuServicess);
-		
 		return SUCCESS;
 	}
 }

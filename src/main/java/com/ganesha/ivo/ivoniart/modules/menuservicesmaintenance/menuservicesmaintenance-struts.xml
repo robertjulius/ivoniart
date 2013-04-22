@@ -14,28 +14,7 @@
 		<action name="initial"
 			class="com.ganesha.ivo.ivoniart.modules.menuservicesmaintenance.action.MenuServicesMaintenanceMainAction"
 			method="initial">
-			<result name="success" type="chain">main
-			</result>
-		</action>
-
-		<action name="main"
-			class="com.ganesha.ivo.ivoniart.modules.menuservicesmaintenance.action.MenuServicesMaintenanceMainAction"
-			method="chainAction">
-			<result name="success">/jsp/modules/menuservicesmaintenance/menu_services_maintenance_main.jsp
-			</result>
-		</action>
-
-		<action name="search"
-			class="com.ganesha.ivo.ivoniart.modules.menuservicesmaintenance.action.MenuServicesMaintenanceMainAction"
-			method="search">
-			<result name="success" type="chain">searchResult
-			</result>
-		</action>
-
-		<action name="searchResult"
-			class="com.ganesha.ivo.ivoniart.modules.menuservicesmaintenance.action.MenuServicesMaintenanceMainAction"
-			method="chainAction">
-			<result name="success">/jsp/modules/menuservicesmaintenance/menu_services_maintenance_main.jsp
+			<result name="success" type="chain">prepareDetail
 			</result>
 		</action>
 
@@ -73,115 +52,15 @@
 			</result>
 		</action>
 
-		<action name="validateUpdate"
+		<action name="executeUpdate"
 			class="com.ganesha.ivo.ivoniart.modules.menuservicesmaintenance.action.MenuServicesMaintenanceUpdateAction"
-			method="validateUpdate">
-			<result name="success" type="chain">confirmUpdate
+			method="executeUpdate">
+			<result name="success" type="chain">prepareDetail
 			</result>
 			<result name="error">/jsp/modules/menuservicesmaintenance/menu_services_maintenance_update.jsp
 			</result>
 		</action>
-
-		<action name="confirmUpdate"
-			class="com.ganesha.ivo.ivoniart.modules.menuservicesmaintenance.action.MenuServicesMaintenanceUpdateAction"
-			method="chainAction">
-			<result name="success">/jsp/modules/menuservicesmaintenance/menu_services_maintenance_confirm_update.jsp
-			</result>
-		</action>
-
-		<action name="executeUpdate"
-			class="com.ganesha.ivo.ivoniart.modules.menuservicesmaintenance.action.MenuServicesMaintenanceUpdateAction"
-			method="executeUpdate">
-			<result name="success" type="chain">summaryUpdate
-			</result>
-			<result name="error">/jsp/modules/menuservicesmaintenance/menu_services_maintenance_confirm_update.jsp
-			</result>
-		</action>
-
-		<action name="summaryUpdate"
-			class="com.ganesha.ivo.ivoniart.modules.menuservicesmaintenance.action.MenuServicesMaintenanceUpdateAction"
-			method="chainAction">
-			<result name="success" type="chain">search
-			</result>
-		</action>
-		<!-- =================================== -->
-		<!-- MenuServicesMaintenanceUpdateAction : END -->
-		<!-- =================================== -->
-
-		<!-- ===================================== -->
-		<!-- MenuServicesMaintenanceCreateAction : BEGIN -->
-		<!-- ===================================== -->
-		<action name="prepareCreate"
-			class="com.ganesha.ivo.ivoniart.modules.menuservicesmaintenance.action.MenuServicesMaintenanceCreateAction"
-			method="prepareCreate">
-			<result name="success" type="chain">formCreate
-			</result>
-		</action>
-
-		<action name="formCreate"
-			class="com.ganesha.ivo.ivoniart.modules.menuservicesmaintenance.action.MenuServicesMaintenanceCreateAction"
-			method="chainAction">
-			<result name="success">/jsp/modules/menuservicesmaintenance/menu_services_maintenance_create.jsp
-			</result>
-		</action>
-
-		<action name="validateCreate"
-			class="com.ganesha.ivo.ivoniart.modules.menuservicesmaintenance.action.MenuServicesMaintenanceCreateAction"
-			method="validateCreate">
-			<result name="success" type="chain">confirmCreate
-			</result>
-			<result name="error">/jsp/modules/menuservicesmaintenance/menu_services_maintenance_create.jsp
-			</result>
-		</action>
-
-		<action name="confirmCreate"
-			class="com.ganesha.ivo.ivoniart.modules.menuservicesmaintenance.action.MenuServicesMaintenanceCreateAction"
-			method="chainAction">
-			<result name="success">/jsp/modules/menuservicesmaintenance/menu_services_maintenance_confirm_create.jsp
-			</result>
-		</action>
-
-		<action name="executeCreate"
-			class="com.ganesha.ivo.ivoniart.modules.menuservicesmaintenance.action.MenuServicesMaintenanceCreateAction"
-			method="executeCreate">
-			<result name="success" type="chain">summaryCreate
-			</result>
-			<result name="error">/jsp/modules/menuservicesmaintenance/menu_services_maintenance_confirm_create.jsp
-			</result>
-		</action>
-
-		<action name="summaryCreate"
-			class="com.ganesha.ivo.ivoniart.modules.menuservicesmaintenance.action.MenuServicesMaintenanceCreateAction"
-			method="chainAction">
-			<result name="success" type="chain">search
-			</result>
-		</action>
-		<!-- =================================== -->
-		<!-- MenuServicesMaintenanceCreateAction : END -->
-		<!-- =================================== -->
-
-		<!-- ===================================== -->
-		<!-- MenuServicesMaintenanceDeleteAction : BEGIN -->
-		<!-- ===================================== -->
-		<action name="executeDelete"
-			class="com.ganesha.ivo.ivoniart.modules.menuservicesmaintenance.action.MenuServicesMaintenanceDeleteAction"
-			method="executeDelete">
-			<result name="success" type="chain">summaryDelete
-			</result>
-			<result name="error">/jsp/modules/menuservicesmaintenance/menu_services_maintenance_detail.jsp
-			</result>
-		</action>
-
-		<action name="summaryDelete"
-			class="com.ganesha.ivo.ivoniart.modules.menuservicesmaintenance.action.MenuServicesMaintenanceDeleteAction"
-			method="chainAction">
-			<result name="success" type="chain">search
-			</result>
-		</action>
-		<!-- =================================== -->
-		<!-- MenuServicesMaintenanceDeleteAction : END -->
-		<!-- =================================== -->
-
+		
 	</package>
 
 </struts>

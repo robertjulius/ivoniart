@@ -20,7 +20,6 @@ public class MenuServicesMaintenanceForm extends FormBean {
 	private Pagination pagination;
 	private List<MenuServices> searchResult;
 
-	private String selectedId;
 	private MenuServices old;
 
 	private String newPictureId;
@@ -72,10 +71,6 @@ public class MenuServicesMaintenanceForm extends FormBean {
 		return searchTitle;
 	}
 
-	public String getSelectedId() {
-		return selectedId;
-	}
-
 	public List<Picture> getSelectListPicture() {
 		return selectListPicture;
 	}
@@ -122,10 +117,6 @@ public class MenuServicesMaintenanceForm extends FormBean {
 
 	public void setSearchTitle(String searchTitle) {
 		this.searchTitle = searchTitle;
-	}
-
-	public void setSelectedId(String selectedId) {
-		this.selectedId = selectedId;
 	}
 
 	public void setSelectListPicture(List<Picture> selectListPicture) {
