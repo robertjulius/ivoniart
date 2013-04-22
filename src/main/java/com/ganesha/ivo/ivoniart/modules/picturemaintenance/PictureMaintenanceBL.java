@@ -68,22 +68,35 @@ public class PictureMaintenanceBL extends BusinessLogic {
 	public void delete(String id, String updateBy, Timestamp updateDate)
 			throws UserException, AppException {
 
-		beginTransaction();
+		try {
+			beginTransaction();
 
-		/*
-		 * TODO Auto-generated method stub Define your own object
-		 */
-		Picture picture = (Picture) getSession().load(Picture.class, id);
-		picture.setUpdateBy(updateBy);
-		picture.setUpdateDate(updateDate);
-		picture.setRecStatus(GeneralConstants.REC_STATUS_NONACTIVE);
+			/*
+			 * TODO Auto-generated method stub Define your own object
+			 */
+			Picture picture = (Picture) getSession().load(Picture.class, id);
+			picture.setUpdateBy(updateBy);
+			picture.setUpdateDate(updateDate);
+			picture.setRecStatus(GeneralConstants.REC_STATUS_NONACTIVE);
 
-		getSession().update(picture);
-		saveActivityLog(ActionType.DELETE,
-				"Delete com.ganesha.ivo.ivoniart.model.picture.Picture with id "
-						+ id); // TODO Define your own description
+			getSession().update(picture);
+			saveActivityLog(ActionType.DELETE,
+					"Delete com.ganesha.ivo.ivoniart.model.picture.Picture with id "
+							+ id); // TODO Define your own description
 
-		commit();
+			File file = new File(
+					new StringBuilder(
+							SystemSetting
+									.getProperty(PropertiesConstants.SYSTEM_DIRECTORY_FILE_IMAGES))
+							.append(File.separator).append(picture.getId())
+							.toString());
+			FileUtils.forceDelete(file);
+
+			commit();
+		} catch (IOException e) {
+			rollback();
+			throw new AppException(e);
+		}
 	}
 
 	public Picture getDetail(String id) throws AppException {
