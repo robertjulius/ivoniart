@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="menuhomemaintenance" extends="basicweb"
+		namespace="/modules/menuhomemaintenance">
+
+		<!-- =================================== -->
+		<!-- MenuHomeMaintenanceMainAction : BEGIN -->
+		<!-- =================================== -->
+		<action name="initial"
+			class="com.ganesha.ivo.ivoniart.modules.menuhomemaintenance.action.MenuHomeMaintenanceMainAction"
+			method="initial">
+			<result name="success" type="chain">prepareDetail
+			</result>
+		</action>
+
+		<action name="prepareDetail"
+			class="com.ganesha.ivo.ivoniart.modules.menuhomemaintenance.action.MenuHomeMaintenanceMainAction"
+			method="prepareDetail">
+			<result name="success" type="chain">detail
+			</result>
+		</action>
+
+		<action name="detail"
+			class="com.ganesha.ivo.ivoniart.modules.menuhomemaintenance.action.MenuHomeMaintenanceMainAction"
+			method="chainAction">
+			<result name="success">/jsp/modules/menuhomemaintenance/menu_home_maintenance_detail.jsp
+			</result>
+		</action>
+		<!-- ================================= -->
+		<!-- MenuHomeMaintenanceMainAction : END -->
+		<!-- ================================= -->
+
+		<!-- ===================================== -->
+		<!-- MenuHomeMaintenanceUpdateAction : BEGIN -->
+		<!-- ===================================== -->
+		<action name="prepareUpdate"
+			class="com.ganesha.ivo.ivoniart.modules.menuhomemaintenance.action.MenuHomeMaintenanceUpdateAction"
+			method="prepareUpdate">
+			<result name="success" type="chain">formUpdate
+			</result>
+		</action>
+
+		<action name="formUpdate"
+			class="com.ganesha.ivo.ivoniart.modules.menuhomemaintenance.action.MenuHomeMaintenanceUpdateAction"
+			method="chainAction">
+			<result name="success">/jsp/modules/menuhomemaintenance/menu_home_maintenance_update.jsp
+			</result>
+		</action>
+
+		<action name="executeUpdate"
+			class="com.ganesha.ivo.ivoniart.modules.menuhomemaintenance.action.MenuHomeMaintenanceUpdateAction"
+			method="executeUpdate">
+			<result name="success" type="chain">prepareDetail
+			</result>
+			<result name="error">/jsp/modules/menuhomemaintenance/menu_home_maintenance_update.jsp
+			</result>
+		</action>
+		
+	</package>
+
+</struts>
