@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="websitemenu" extends="basicweb"
+		namespace="/menu">
+
+		<action name="home"
+			class="com.ganesha.ivo.ivoniart.websitemenu.action.MenuHomeAction">
+			<result name="success">/jsp/menu/home.jsp
+			</result>
+		</action>
+		
+		<action name="about"
+			class="com.ganesha.ivo.ivoniart.websitemenu.action.MenuAboutAction">
+			<result name="success">/jsp/menu/about.jsp
+			</result>
+		</action>
+		
+		<action name="contact"
+			class="com.ganesha.ivo.ivoniart.websitemenu.action.MenuContactAction">
+			<result name="success">/jsp/menu/contact.jsp
+			</result>
+		</action>
+		
+		<action name="services"
+			class="com.ganesha.ivo.ivoniart.websitemenu.action.MenuServicesAction">
+			<result name="success">/jsp/menu/services.jsp
+			</result>
+		</action>
+		
+	</package>
+
+</struts>

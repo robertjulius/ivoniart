@@ -38,6 +38,10 @@
 				<value>/modules/login/executeLogin.action</value>
 				<value>/main/index.action</value>
 				<value>/index.action</value>
+				<value>/menu/home.action</value>
+				<value>/menu/about.action</value>
+				<value>/menu/contact.action</value>
+				<value>/menu/services.action</value>
 			</list>
 		</property>
 		<property name="urlDoesntNeedPrivilege">
