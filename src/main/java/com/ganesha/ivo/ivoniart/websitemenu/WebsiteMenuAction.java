@@ -45,4 +45,8 @@ public abstract class WebsiteMenuAction<T> extends BaseAction implements
 	public final T getModel() {
 		return model;
 	}
+
+	public final void setModel(T model) {
+		this.model = model;
+	}
 }
