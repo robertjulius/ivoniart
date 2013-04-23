@@ -1,5 +1,6 @@
 package com.ganesha.ivo.ivoniart.model.menucontact;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -22,10 +23,12 @@ public class MenuContact extends Trackable {
 	private String id;
 
 	private String title;
-	private String content;
 	private String address;
 	private String phone;
 	private String email;
+
+	@Column(length = 10240)
+	private String content;
 
 	public String getAddress() {
 		return address;

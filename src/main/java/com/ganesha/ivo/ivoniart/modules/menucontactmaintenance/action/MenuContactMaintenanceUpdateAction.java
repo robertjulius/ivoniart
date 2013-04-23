@@ -1,0 +1,39 @@
+package com.ganesha.ivo.ivoniart.modules.menucontactmaintenance.action;
+
+import com.ganesha.basicweb.model.user.SimpleUser;
+import com.ganesha.basicweb.utility.CommonUtils;
+import com.ganesha.core.exception.AppException;
+import com.ganesha.ivo.ivoniart.modules.menucontactmaintenance.MenuContactMaintenanceForm;
+
+public class MenuContactMaintenanceUpdateAction extends
+		MenuContactMaintenanceAction {
+
+	private static final long serialVersionUID = 1L;
+
+	public MenuContactMaintenanceUpdateAction() throws AppException {
+		super();
+	}
+
+	public String executeUpdate() throws AppException {
+		SimpleUser user = (SimpleUser) getUserSession().getUser();
+
+		MenuContactMaintenanceForm form = getForm();
+		String newTitle = form.getNewTitle();
+		String newContent = form.getNewContent();
+		String newAddress = form.getNewAddress();
+		String newPhone = form.getNewPhone();
+		String newEmail = form.getNewEmail();
+		getBL().update(newTitle, newContent, newAddress, newPhone, newEmail,
+				user.getId(), CommonUtils.getCurrentTimestamp());
+
+		return SUCCESS;
+	}
+
+	public String prepareUpdate() throws AppException {
+		MenuContactMaintenanceForm form = getForm();
+		form.clearForm("new");
+		form.assignFromEntity("new", form.getOld());
+
+		return SUCCESS;
+	}
+}
