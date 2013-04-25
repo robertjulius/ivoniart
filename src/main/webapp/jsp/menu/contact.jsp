@@ -10,30 +10,53 @@
 <sj:head />
 <link rel="stylesheet" href="/ivoniart/css/ivoniart-website.css"
 	type="text/css" />
+<style type="text/css">
+div#userMessage {
+		
+}
+</style>
 </head>
 <body>
 	<div id="root">
 		<div id="header">
-			<div id="menustrip">
-				<div id="menubar">
-					<div id="menuitem">
+			<div id="menuStrip">
+				<div id="menuBar">
+					<div id="menuItem">
 						<a href="<%=request.getContextPath()%>/menu/home.action">Home</a>
 					</div>
-					<div id="menuitem">
+					<div id="menuItem">
 						<a href="<%=request.getContextPath()%>/menu/about.action">About</a>
 					</div>
-					<div id="menuitem">
+					<div id="menuItem">
 						<a href="<%=request.getContextPath()%>/menu/services.action">Services</a>
 					</div>
-					<div id="menuitem">
+					<div id="menuItem">
 						<a href="<%=request.getContextPath()%>/menu/contact.action">Contact</a>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div id="body">
-			<div id="title"><s:property value="title" escape="false"/></div>
-			<div id="content"><s:property value="content" escape="false"/></div>
+			<div id="title">
+				<s:property value="title" escape="false" />
+			</div>
+			<div id="content">
+				<s:property value="content" escape="false" />
+			</div>
+			<div id="userMessage">
+				<s:form action="/menu/saveGuessMessage.action">
+					<s:actionmessage/>
+					<s:actionerror/>
+					<s:fielderror/>
+					<s:textfield key="guessMessage.name" labelposition="top" required="true" />
+					<s:textfield key="guessMessage.company" labelposition="top" required="true" />
+					<s:textfield key="guessMessage.phone" labelposition="top" required="true" />
+					<s:textfield key="guessMessage.email" labelposition="top" required="true" />
+					<s:textfield key="guessMessage.emailConfirm" labelposition="top" required="true" />
+					<s:textarea key="guessMessage.messages" labelposition="top" required="true" cols="40" rows="10" />
+					<s:submit key="resource.submit" name="%{resource.submit}" />
+				</s:form>
+			</div>
 		</div>
 		<div id="footer">Copyright</div>
 	</div>

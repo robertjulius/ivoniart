@@ -41,6 +41,7 @@
 				<value>/menu/home.action</value>
 				<value>/menu/about.action</value>
 				<value>/menu/contact.action</value>
+				<value>/menu/saveGuessMessage.action</value>
 				<value>/menu/services.action</value>
 			</list>
 		</property>

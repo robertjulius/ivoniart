@@ -21,8 +21,16 @@
 		</action>
 		
 		<action name="contact"
-			class="com.ganesha.ivo.ivoniart.websitemenu.action.MenuContactAction">
+			class="com.ganesha.ivo.ivoniart.websitemenu.action.MenuContactAction" method="execute">
 			<result name="success">/jsp/menu/contact.jsp
+			</result>
+		</action>
+		
+		<action name="saveGuessMessage"
+			class="com.ganesha.ivo.ivoniart.websitemenu.action.MenuContactAction" method="saveGuessMessage">
+			<result name="success">/jsp/menu/contact.jsp
+			</result>
+			<result name="input">/jsp/menu/contact.jsp
 			</result>
 		</action>
 		

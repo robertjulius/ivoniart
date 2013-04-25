@@ -15,19 +15,19 @@ div#header {
 	display: table;
 }
 
-div#menustrip {
+div#menuStrip {
 	position: absolute;
 	width: 100%;
 	bottom: 0px;
 }
 
-div#menubar {
+div#menuBar {
 	margin: 0 auto;
 	overflow: hidden;
 	display: table;
 }
 
-div#menuitem {
+div#menuItem {
 	color: #CCCCCC;
 	float: left;
 	font-weight: bold;
@@ -40,12 +40,12 @@ div#menuitem {
 	border-color: inherit;
 }
 
-div#menuitem a {
+div#menuItem a {
 	text-decoration: none;
 	color: inherit;
 }
 
-div#menuitem:HOVER {
+div#menuItem:HOVER {
 	border-color: #00CCFF;
 	cursor: hand;
 	cursor: pointer;
