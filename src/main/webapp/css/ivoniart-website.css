@@ -97,6 +97,12 @@ div#body {
 	width: 100%;
 	display: table;
 	background-color: rgba(1, 133, 160, 0.10);
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #0185A0;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #0185A0;
 }
 
 div#title {

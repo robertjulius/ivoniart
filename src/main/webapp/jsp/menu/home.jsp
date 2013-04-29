@@ -1,5 +1,3 @@
-<%@page import="com.ganesha.basicweb.utility.PropertiesConstants"%>
-<%@page import="com.ganesha.basicweb.model.systemsetting.SystemSetting"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
@@ -10,8 +8,8 @@
 <s:head />
 <sj:head />
 <script type="text/javascript" src="/ivoniart/js/jquery-slides/jquery.slides.min.js"></script>
-<link rel="stylesheet" href="/ivoniart/css/ivoniart-website.css" type="text/css" />
 <link rel="stylesheet" href="/ivoniart/css/ivoniart-jquery-slides.css" type="text/css" />
+<link rel="stylesheet" href="/ivoniart/css/ivoniart-website.css" type="text/css" />
 <style type="text/css">
 div#header {
 	height: 200px;
@@ -27,41 +25,17 @@ div#image {
 </head>
 <body>
 	<div id="root">
-		<div id="header">
-			<div id="logo">
-				<img src="<%=request.getContextPath()%>/resources/resource.action?path=images/<%=SystemSetting .getProperty(PropertiesConstants.WEB_ITEMS_IMAGE_LOGO)%>&resType=image" />
-			</div>
-			<div id="menuStrip" class="borderTop borderBottom">
-				<div id="menuBar">
-					<div id="menuItem">
-						<a href="<%=request.getContextPath()%>/menu/home.action">Home</a>
-					</div>
-					<div id="menuItem">
-						<a href="<%=request.getContextPath()%>/menu/about.action">About</a>
-					</div>
-					<div id="menuItem">
-						<a href="<%=request.getContextPath()%>/menu/services.action">Services</a>
-					</div>
-					<div id="menuItem">
-						<a href="<%=request.getContextPath()%>/menu/contact.action">Contact</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="body" class="borderTop borderBottom">
+		<%@include file="/jsp/website/header.jsp" %>
+		<div id="body">
 			<div id="image" class="borderRight borderLeft">
 				<div id="slides">
 					<s:iterator value="menuHome.pictures" status="rowstatus">
-						<td><img src="<%=request.getContextPath()%>/resources/resource.action?path=images/<s:property value="id" />&resType=image" /></td>											
+						<img src="<%=request.getContextPath()%>/resources/resource.action?path=images/<s:property value="id" />&resType=image" />											
 					</s:iterator>
   				</div>
 			</div>
 		</div>
-		<div id="footer" class="borderTop">
-			<div id="copyright">
-				<%=SystemSetting.getProperty(PropertiesConstants.WEB_ITEMS_COPYRIGHT)%>
-			</div>
-		</div>
+		<%@include file="/jsp/website/footer.jsp" %>
 	</div>
 </body>
 <script type="text/javascript">

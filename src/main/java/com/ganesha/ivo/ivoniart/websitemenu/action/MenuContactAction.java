@@ -17,12 +17,24 @@ public class MenuContactAction extends WebsiteMenuAction {
 				MenuContact.class).uniqueResult();
 	}
 
+	public String getAddress() {
+		return menuContact.getAddress();
+	}
+
 	public String getContent() {
 		return menuContact.getContent();
 	}
 
+	public String getEmail() {
+		return menuContact.getEmail();
+	}
+
 	public GuessMessage getGuessMessage() {
 		return guessMessage;
+	}
+
+	public String getPhone() {
+		return menuContact.getPhone();
 	}
 
 	public String getTitle() {
