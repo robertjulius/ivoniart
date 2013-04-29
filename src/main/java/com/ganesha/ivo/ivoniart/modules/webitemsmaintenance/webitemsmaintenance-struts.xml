@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="webitemsmaintenance" extends="basicweb"
+		namespace="/modules/webitemsmaintenance">
+
+		<!-- =================================== -->
+		<!-- WebItemsMaintenanceMainAction : BEGIN -->
+		<!-- =================================== -->
+		<action name="initial"
+			class="com.ganesha.ivo.ivoniart.modules.webitemsmaintenance.action.WebItemsMaintenanceMainAction"
+			method="initial">
+			<result name="success" type="chain">prepareDetail
+			</result>
+		</action>
+
+		<action name="prepareDetail"
+			class="com.ganesha.ivo.ivoniart.modules.webitemsmaintenance.action.WebItemsMaintenanceMainAction"
+			method="prepareDetail">
+			<result name="success" type="chain">detail
+			</result>
+		</action>
+
+		<action name="detail"
+			class="com.ganesha.ivo.ivoniart.modules.webitemsmaintenance.action.WebItemsMaintenanceMainAction"
+			method="chainAction">
+			<result name="success">/jsp/modules/webitemsmaintenance/web_items_maintenance_detail.jsp
+			</result>
+		</action>
+		<!-- ================================= -->
+		<!-- WebItemsMaintenanceMainAction : END -->
+		<!-- ================================= -->
+
+		<!-- ===================================== -->
+		<!-- WebItemsMaintenanceUpdateAction : BEGIN -->
+		<!-- ===================================== -->
+		<action name="prepareUpdate"
+			class="com.ganesha.ivo.ivoniart.modules.webitemsmaintenance.action.WebItemsMaintenanceUpdateAction"
+			method="prepareUpdate">
+			<result name="success" type="chain">formUpdate
+			</result>
+		</action>
+
+		<action name="formUpdate"
+			class="com.ganesha.ivo.ivoniart.modules.webitemsmaintenance.action.WebItemsMaintenanceUpdateAction"
+			method="chainAction">
+			<result name="success">/jsp/modules/webitemsmaintenance/web_items_maintenance_update.jsp
+			</result>
+		</action>
+
+		<action name="executeUpdate"
+			class="com.ganesha.ivo.ivoniart.modules.webitemsmaintenance.action.WebItemsMaintenanceUpdateAction"
+			method="executeUpdate">
+			<result name="success" type="chain">prepareDetail
+			</result>
+			<result name="error">/jsp/modules/webitemsmaintenance/web_items_maintenance_update.jsp
+			</result>
+		</action>
+		
+	</package>
+
+</struts>

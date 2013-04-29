@@ -42,7 +42,7 @@
 							<td><b><s:text name="resource.content"/></b></td>
 						</tr>
 						<tr>
-							<td><sjr:tinymce key="resource.content" id="richtextTinymceEditor" name="newContent"
+							<td><sjr:tinymce key="resource.content" id="newContent" name="newContent"
 									height="300" width="800" editorTheme="simple" />
 							</td>
 						</tr>

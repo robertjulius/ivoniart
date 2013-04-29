@@ -13,9 +13,6 @@ public class MenuHomeMaintenanceForm extends FormBean {
 
 	private static final long serialVersionUID = 1L;
 
-	private String searchQuickLink1;
-	private String searchQuickLink2;
-
 	private Pagination pagination;
 	private List<MenuHome> searchResult;
 
@@ -47,14 +44,6 @@ public class MenuHomeMaintenanceForm extends FormBean {
 		return pagination;
 	}
 
-	public String getSearchQuickLink1() {
-		return searchQuickLink1;
-	}
-
-	public String getSearchQuickLink2() {
-		return searchQuickLink2;
-	}
-
 	public List<MenuHome> getSearchResult() {
 		return searchResult;
 	}
@@ -81,14 +70,6 @@ public class MenuHomeMaintenanceForm extends FormBean {
 
 	public void setPagination(Pagination pagination) {
 		this.pagination = pagination;
-	}
-
-	public void setSearchQuickLink1(String searchQuickLink1) {
-		this.searchQuickLink1 = searchQuickLink1;
-	}
-
-	public void setSearchQuickLink2(String searchQuickLink2) {
-		this.searchQuickLink2 = searchQuickLink2;
 	}
 
 	public void setSearchResult(List<MenuHome> searchResult) {

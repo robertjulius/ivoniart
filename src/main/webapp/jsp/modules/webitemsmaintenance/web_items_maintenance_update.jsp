@@ -18,7 +18,7 @@
 			<td class="pageTitle2"><s:text name="resource.page.title2.update" /></td>
 		</tr>
 	</table>
-	<s:form action="/modules/servicemaintenance/validateUpdate.action" theme="simple">
+	<s:form action="/modules/webitemsmaintenance/executeUpdate.action" theme="simple">
 		<s:if test="hasActionErrors()">
 			<table>
 				<s:actionerror />
@@ -29,23 +29,14 @@
 			<tr>
 				<td>
 					<table>
-						<s:select key="resource.picture" name="newPictureId" id="newPictureId" list="selectListPicture" listKey="id" listValue="title" theme="xhtml" />
-						<s:hidden name="newPictureTitle" id="newPictureTitle" />
-						<s:textfield key="resource.title" name="newTitle" theme="xhtml" size="30px" />
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<table>
+						<s:select key="resource.logoImage" name="newLogoImageId" id="newLogoImageId" list="selectListLogoImage" listKey="id" listValue="title" theme="xhtml" />
 						<tr>
-							<td><b><s:text name="resource.content"/></b></td>
-						</tr>
-						<tr>
-							<td><sjr:tinymce key="resource.content" id="newContent" name="newContent"
-									height="100" width="500" editorTheme="simple" />
+							<td align="right">Copyright:</td>
+							<td><sjr:tinymce key="resource.copyright" id="newCopyright" name="newCopyright"
+									height="50" width="200" editorTheme="simple" />
 							</td>
 						</tr>
+						<s:select key="resource.backgroundImage" name="newBackgroundImageId" id="newBackgroundImageId" list="selectListBackgroundImage" listKey="id" listValue="title" theme="xhtml" />
 					</table>
 				</td>
 			</tr>
@@ -59,7 +50,7 @@
 					<table>
 						<tr>
 							<td><input type="button" value="<s:text name="resource.cancel"/>"
-								onclick="if (!confirmCancel()) {return;} $(this).closest('form').attr('action', '<%=request.getContextPath()%>/modules/servicemaintenance/detail.action'); $(this).closest('form').submit();" /></td>
+								onclick="if (!confirmCancel()) {return;} $(this).closest('form').attr('action', '<%=request.getContextPath()%>/modules/webitemsmaintenance/detail.action'); $(this).closest('form').submit();" /></td>
 							<td><input type="button" value="<s:text name="resource.submit"/>"
 								onclick="if (confirmAction()) {$(this).closest('form').submit();}" /></td>
 						</tr>
@@ -69,14 +60,4 @@
 		</table>
 	</s:form>
 </body>
-<script type="text/javascript">
-	$(function() {
-		$('#newPictureId').change(
-				function() {
-					$('#newPictureTitle').val(
-							$(this).children("option").filter(":selected")
-									.text());
-				});
-	});
-</script>
 </html>

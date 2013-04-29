@@ -29,4 +29,11 @@ public class PropertiesConstants {
 	public static final String SYSTEM_DIRECTORY_FILE_IMAGES = "system.directory.file.images";
 	public static final String SYSTEM_DIRECTORY_TEMP = "system.directory.temp";
 	public static final String SYSTEM_DIRECTORY = "system.directory";
+
+	/*
+	 * For website interface
+	 */
+	public static final String WEB_ITEMS_IMAGE_LOGO = "web.items.image.logo";
+	public static final String WEB_ITEMS_IMAGE_BACKGROUND = "web.items.image.background";
+	public static final String WEB_ITEMS_COPYRIGHT = "web.items.copyright";
 }

@@ -31,5 +31,6 @@
 		<mapping class="com.ganesha.ivo.ivoniart.model.service.Service" />
 		<mapping class="com.ganesha.ivo.ivoniart.model.song.Song" />
 		<mapping class="com.ganesha.ivo.ivoniart.model.guessmessages.GuessMessage" />
+		<mapping class="com.ganesha.ivo.ivoniart.model.webitems.WebItems" />
 	</session-factory>
 </hibernate-configuration>

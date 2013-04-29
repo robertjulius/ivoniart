@@ -38,6 +38,7 @@
 				<value>/modules/login/executeLogin.action</value>
 				<value>/main/index.action</value>
 				<value>/index.action</value>
+				<value>/resources/resource.action</value>
 				<value>/menu/home.action</value>
 				<value>/menu/about.action</value>
 				<value>/menu/contact.action</value>
@@ -51,7 +52,6 @@
 				<value>/main/topFrame.action</value>
 				<value>/main/home.action</value>
 				<value>/modules/logout/executeLogout.action</value>
-				<value>/resources/resource.action</value>
 			</list>
 		</property>
 	</bean>

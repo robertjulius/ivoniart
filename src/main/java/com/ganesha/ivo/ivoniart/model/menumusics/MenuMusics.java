@@ -3,15 +3,12 @@ package com.ganesha.ivo.ivoniart.model.menumusics;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.GenericGenerator;
 
 import com.ganesha.basicweb.model.Trackable;
 import com.ganesha.ivo.ivoniart.model.picture.Picture;
@@ -25,8 +22,6 @@ public class MenuMusics extends Trackable {
 	private static final long serialVersionUID = -1218882314919256632L;
 
 	@Id
-	@GeneratedValue(generator = "system-uuid")
-	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	private String id;
 
 	@ManyToOne

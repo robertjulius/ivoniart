@@ -57,6 +57,7 @@
 	<include file="com/ganesha/ivo/ivoniart/modules/menuservicesmaintenance/menuservicesmaintenance-struts.xml"></include>
 	<include file="com/ganesha/ivo/ivoniart/modules/menucontactmaintenance/menucontactmaintenance-struts.xml"></include>
 	<include file="com/ganesha/ivo/ivoniart/modules/menuhomemaintenance/menuhomemaintenance-struts.xml"></include>
+	<include file="com/ganesha/ivo/ivoniart/modules/webitemsmaintenance/webitemsmaintenance-struts.xml"></include>
 	<!-- DO NOT DELETE OR EDIT THIS LINE. THIS LINE IS USED BY GANESHA FRAMEWORK TO GENERATE NEW MODULE -->
 	
 	<include file="com/ganesha/ivo/ivoniart/websitemenu/websitemenu-struts.xml"></include>

@@ -12,12 +12,6 @@ public class MenuContactMaintenanceForm extends FormBean {
 
 	private static final long serialVersionUID = 1L;
 
-	private String searchTitle;
-	private String searchContent;
-	private String searchAddress;
-	private String searchPhone;
-	private String searchEmail;
-
 	private Pagination pagination;
 	private List<MenuContact> searchResult;
 
@@ -57,28 +51,8 @@ public class MenuContactMaintenanceForm extends FormBean {
 		return pagination;
 	}
 
-	public String getSearchAddress() {
-		return searchAddress;
-	}
-
-	public String getSearchContent() {
-		return searchContent;
-	}
-
-	public String getSearchEmail() {
-		return searchEmail;
-	}
-
-	public String getSearchPhone() {
-		return searchPhone;
-	}
-
 	public List<MenuContact> getSearchResult() {
 		return searchResult;
-	}
-
-	public String getSearchTitle() {
-		return searchTitle;
 	}
 
 	public void setNewAddress(String newAddress) {
@@ -109,28 +83,8 @@ public class MenuContactMaintenanceForm extends FormBean {
 		this.pagination = pagination;
 	}
 
-	public void setSearchAddress(String searchAddress) {
-		this.searchAddress = searchAddress;
-	}
-
-	public void setSearchContent(String searchContent) {
-		this.searchContent = searchContent;
-	}
-
-	public void setSearchEmail(String searchEmail) {
-		this.searchEmail = searchEmail;
-	}
-
-	public void setSearchPhone(String searchPhone) {
-		this.searchPhone = searchPhone;
-	}
-
 	public void setSearchResult(List<MenuContact> searchResult) {
 		this.searchResult = searchResult;
-	}
-
-	public void setSearchTitle(String searchTitle) {
-		this.searchTitle = searchTitle;
 	}
 
 	@Override

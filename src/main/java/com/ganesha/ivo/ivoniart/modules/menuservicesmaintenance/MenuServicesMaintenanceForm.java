@@ -14,9 +14,6 @@ public class MenuServicesMaintenanceForm extends FormBean {
 
 	private static final long serialVersionUID = 1L;
 
-	private String searchTitle;
-	private String searchContent;
-
 	private Pagination pagination;
 	private List<MenuServices> searchResult;
 
@@ -59,16 +56,8 @@ public class MenuServicesMaintenanceForm extends FormBean {
 		return pagination;
 	}
 
-	public String getSearchContent() {
-		return searchContent;
-	}
-
 	public List<MenuServices> getSearchResult() {
 		return searchResult;
-	}
-
-	public String getSearchTitle() {
-		return searchTitle;
 	}
 
 	public List<Picture> getSelectListPicture() {
@@ -107,16 +96,8 @@ public class MenuServicesMaintenanceForm extends FormBean {
 		this.pagination = pagination;
 	}
 
-	public void setSearchContent(String searchContent) {
-		this.searchContent = searchContent;
-	}
-
 	public void setSearchResult(List<MenuServices> searchResult) {
 		this.searchResult = searchResult;
-	}
-
-	public void setSearchTitle(String searchTitle) {
-		this.searchTitle = searchTitle;
 	}
 
 	public void setSelectListPicture(List<Picture> selectListPicture) {
