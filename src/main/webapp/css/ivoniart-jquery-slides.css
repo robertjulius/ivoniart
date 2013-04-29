@@ -1,0 +1,77 @@
+#slides {
+	display: none;
+	position: relative;
+}
+
+a.slidesjs-next {
+	right: 50px;
+	background-image: url('/ivoniart/resources/resource.action?path=images/jquery-slides/btn-next.png&resType=image');
+	opacity: 0.5;
+}
+
+a:hover.slidesjs-next {
+	opacity: 1;
+}
+
+a.slidesjs-previous {
+	left: 50px;
+	background-image: url('/ivoniart/resources/resource.action?path=images/jquery-slides/btn-prev.png&resType=image');
+	opacity: 0.5;
+}
+
+a:hover.slidesjs-previous {
+	opacity: 1;
+}
+
+a.slidesjs-next, a.slidesjs-previous, .slidesjs-pagination, a.slidesjs-stop, a.slidesjs-play {
+	display: block;
+	bottom: 20px;
+	overflow: hidden;
+	z-index: 10;
+	position: absolute;
+	margin: 0 auto;
+}
+
+a.slidesjs-next, a.slidesjs-previous, a.slidesjs-stop, a.slidesjs-play {
+	width: 12px;
+	height: 18px;
+	text-indent: -9999px;
+}
+
+.slidesjs-pagination {
+	width: 100%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	display: none;
+}
+
+.slidesjs-pagination li {
+	float: left;
+}
+
+.slidesjs-pagination li a {
+	display: block;
+	width: 13px;
+	height: 0;
+	padding-top: 13px;
+	background-image:
+		url('/ivoniart/resources/resource.action?path=images/jquery-slides/pagination.png&resType=image');
+}
+
+.slidesjs-pagination li a.active,.slidesjs-pagination li a:hover.active
+	{
+	background-position: 0 -13px
+}
+
+.slidesjs-pagination li a:hover {
+	background-position: 0 -26px
+}
+
+#slides a:link,#slides a:visited {
+	color: #333
+}
+
+#slides a:hover,#slides a:active {
+	color: #9e2020
+}
