@@ -54,7 +54,11 @@ div#image {
 				<img src="<%=request.getContextPath()%>/resources/resource.action?path=aaa&resType=image"/>
 			</div>
 		</div>
-		<div id="footer" class="borderTop">Copyright</div>
+		<div id="footer" class="borderTop">
+			<div id="copyright">
+				<%=SystemSetting.getProperty(PropertiesConstants.WEB_ITEMS_COPYRIGHT) %>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

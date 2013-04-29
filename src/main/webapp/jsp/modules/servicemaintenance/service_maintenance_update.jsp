@@ -43,7 +43,7 @@
 						</tr>
 						<tr>
 							<td><sjr:tinymce key="resource.content" id="newContent" name="newContent"
-									height="100" width="500" editorTheme="simple" />
+									height="200" width="500" />
 							</td>
 						</tr>
 					</table>

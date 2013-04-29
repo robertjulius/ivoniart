@@ -33,7 +33,7 @@
 						<tr>
 							<td align="right">Copyright:</td>
 							<td><sjr:tinymce key="resource.copyright" id="newCopyright" name="newCopyright"
-									height="50" width="200" editorTheme="simple" />
+									height="50" width="300" />
 							</td>
 						</tr>
 						<s:select key="resource.backgroundImage" name="newBackgroundImageId" id="newBackgroundImageId" list="selectListBackgroundImage" listKey="id" listValue="title" theme="xhtml" />
