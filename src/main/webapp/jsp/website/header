@@ -1,5 +1,6 @@
 <%@page import="com.ganesha.basicweb.model.systemsetting.SystemSetting"%>
 <%@page import="com.ganesha.basicweb.utility.PropertiesConstants"%>
+	<div id="root">
 		<div id="header">
 			<div id="logo">
 				<img src="<%=request.getContextPath()%>/resources/resource.action?path=images/<%=SystemSetting.getProperty(PropertiesConstants.WEB_ITEMS_IMAGE_LOGO)%>&resType=image" />
@@ -21,3 +22,4 @@
 				</div>
 			</div>
 		</div>
+		<div id="bodyContainer">

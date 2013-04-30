@@ -6,6 +6,7 @@ import com.ganesha.basicweb.model.FormBean;
 import com.ganesha.basicweb.model.Pagination;
 import com.ganesha.core.exception.AppException;
 import com.ganesha.ivo.ivoniart.model.menucontact.MenuContact;
+import com.ganesha.ivo.ivoniart.model.picture.Picture;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class MenuContactMaintenanceForm extends FormBean {
@@ -17,11 +18,14 @@ public class MenuContactMaintenanceForm extends FormBean {
 
 	private MenuContact old;
 
+	private String newPictureId;
 	private String newTitle;
 	private String newContent;
 	private String newAddress;
 	private String newPhone;
 	private String newEmail;
+
+	private List<Picture> selectListPicture;
 
 	public String getNewAddress() {
 		return newAddress;
@@ -37,6 +41,10 @@ public class MenuContactMaintenanceForm extends FormBean {
 
 	public String getNewPhone() {
 		return newPhone;
+	}
+
+	public String getNewPictureId() {
+		return newPictureId;
 	}
 
 	public String getNewTitle() {
@@ -55,6 +63,10 @@ public class MenuContactMaintenanceForm extends FormBean {
 		return searchResult;
 	}
 
+	public List<Picture> getSelectListPicture() {
+		return selectListPicture;
+	}
+
 	public void setNewAddress(String newAddress) {
 		this.newAddress = newAddress;
 	}
@@ -71,6 +83,10 @@ public class MenuContactMaintenanceForm extends FormBean {
 		this.newPhone = newPhone;
 	}
 
+	public void setNewPictureId(String newPictureId) {
+		this.newPictureId = newPictureId;
+	}
+
 	public void setNewTitle(String newTitle) {
 		this.newTitle = newTitle;
 	}
@@ -85,6 +101,10 @@ public class MenuContactMaintenanceForm extends FormBean {
 
 	public void setSearchResult(List<MenuContact> searchResult) {
 		this.searchResult = searchResult;
+	}
+
+	public void setSelectListPicture(List<Picture> selectListPicture) {
+		this.selectListPicture = selectListPicture;
 	}
 
 	@Override

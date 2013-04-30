@@ -9,42 +9,36 @@
 <sj:head />
 <link rel="stylesheet" href="/ivoniart/css/ivoniart-website.css" type="text/css" />
 <style type="text/css">
-
+div#userMessage {
+}
 </style>
 </head>
 <body>
-	<div id="root">
-		<%@include file="/jsp/website/header.jsp" %>
-		<div id="body">
-			<div id="title">
-				<s:property value="title" escape="false" />
-			</div>
-			<div id="content">
-				<s:property value="content" escape="false" />
-			</div>
-			<div id="userMessage">
-				<s:form action="/menu/saveGuessMessage.action">
-					<s:actionmessage/>
-					<s:actionerror/>
-					<s:fielderror/>
-					<s:textfield key="guessMessage.name" labelposition="top" required="true" />
-					<s:textfield key="guessMessage.company" labelposition="top" required="true" />
-					<s:textfield key="guessMessage.phone" labelposition="top" required="true" />
-					<s:textfield key="guessMessage.email" labelposition="top" required="true" />
-					<s:textfield key="guessMessage.emailConfirm" labelposition="top" required="true" />
-					<s:textarea key="guessMessage.messages" labelposition="top" required="true" cols="40" rows="10" />
-					<s:submit key="resource.submit" name="%{resource.submit}" />
-				</s:form>
-				<div class="margin: 0 auto; position: absolute;">
-					<p>
-						<s:property value="address" /><br />
-						<s:property value="phone" /><br />
-						<s:property value="email" /><br/>
-					</p>
+		<%@include file="/jsp/website/header" %>
+			<div id="body">
+				<%@include file="/jsp/website/title-picture-content" %>
+				<div id="userMessage">
+					<s:form action="/menu/saveGuessMessage.action">
+						<s:actionmessage/>
+						<s:actionerror/>
+						<s:fielderror/>
+						<s:textfield key="guessMessage.name" labelposition="top" required="true" />
+						<s:textfield key="guessMessage.company" labelposition="top" required="true" />
+						<s:textfield key="guessMessage.phone" labelposition="top" required="true" />
+						<s:textfield key="guessMessage.email" labelposition="top" required="true" />
+						<s:textfield key="guessMessage.emailConfirm" labelposition="top" required="true" />
+						<s:textarea key="guessMessage.messages" labelposition="top" required="true" cols="40" rows="10" />
+						<s:submit key="resource.submit" name="%{resource.submit}" align="center" />
+					</s:form>
+					<div class="margin: 0 auto; position: absolute;">
+						<p>
+							<s:property value="websiteMenu.address" /><br />
+							<s:property value="websiteMenu.phone" /><br />
+							<s:property value="websiteMenu.email" /><br/>
+						</p>
+					</div>
 				</div>
 			</div>
-		</div>
-		<%@include file="/jsp/website/footer.jsp" %>
-	</div>
+		<%@include file="/jsp/website/footer" %>
 </body>
 </html>

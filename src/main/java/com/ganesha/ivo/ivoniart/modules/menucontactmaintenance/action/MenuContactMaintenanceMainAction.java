@@ -1,8 +1,11 @@
 package com.ganesha.ivo.ivoniart.modules.menucontactmaintenance.action;
 
+import java.util.List;
+
 import com.ganesha.basicweb.model.Pagination;
 import com.ganesha.core.exception.AppException;
 import com.ganesha.ivo.ivoniart.model.menucontact.MenuContact;
+import com.ganesha.ivo.ivoniart.model.picture.Picture;
 import com.ganesha.ivo.ivoniart.modules.menucontactmaintenance.MenuContactMaintenanceForm;
 
 public class MenuContactMaintenanceMainAction extends
@@ -17,6 +20,10 @@ public class MenuContactMaintenanceMainAction extends
 	public String initial() throws AppException {
 		MenuContactMaintenanceForm form = getForm();
 
+		List<Picture> pictures = getBL().getAllPictures();
+		pictures.add(0, new Picture());
+
+		form.setSelectListPicture(pictures);
 		form.setPagination(new Pagination(10));
 
 		return SUCCESS;

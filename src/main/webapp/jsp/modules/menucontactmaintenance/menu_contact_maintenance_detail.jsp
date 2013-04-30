@@ -18,6 +18,11 @@
 		</tr>
 	</table>
 	<s:form theme="simple">
+		<table>
+			<tr>
+				<td><img src="<%=request.getContextPath()%>/resources/resource.action?path=images/<s:property value="old.picture.id" />&resType=image" height="100px" class="imageFrame" /></td>
+			</tr>
+		</table>
 		<s:if test="hasActionErrors()">
 			<table>
 				<s:actionerror />
@@ -27,30 +32,32 @@
 		<table class="form">
 			<tr>
 				<td>
-					<table class="grid">
-						<thead>
-							<tr>
-								<td colspan="2"><s:text name="resource.menuContactInformation" /></td>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td align="right" width="100px"><b><s:text name="resource.title" /></b></td>
-								<td align="left" width="300px"><s:property value="old.title" /></td>
-							</tr>
-							<tr>
-								<td align="right" width="100px"><b><s:text name="resource.address" /></b></td>
-								<td align="left" width="300px"><s:property value="old.address" /></td>
-							</tr>
-							<tr>
-								<td align="right" width="100px"><b><s:text name="resource.phone" /></b></td>
-								<td align="left" width="300px"><s:property value="old.phone" /></td>
-							</tr>
-							<tr>
-								<td align="right" width="100px"><b><s:text name="resource.email" /></b></td>
-								<td align="left" width="300px"><s:property value="old.email" /></td>
-							</tr>
-						</tbody>
+					<table>
+						<tr>
+							<td align="right"><b><s:text name="resource.picture" /></b></td>
+							<td>:</td>
+							<td align="left"><s:property value="old.picture.title" /></td>
+						</tr>
+						<tr>
+							<td align="right"><b><s:text name="resource.title" /></b></td>
+							<td>:</td>
+							<td align="left"><s:property value="old.title" /></td>
+						</tr>
+						<tr>
+							<td align="right"><b><s:text name="resource.address" /></b></td>
+							<td>:</td>
+							<td align="left"><s:property value="old.address" /></td>
+						</tr>
+						<tr>
+							<td align="right"><b><s:text name="resource.phone" /></b></td>
+							<td>:</td>
+							<td align="left"><s:property value="old.phone" /></td>
+						</tr>
+						<tr>
+							<td align="right"><b><s:text name="resource.email" /></b></td>
+							<td>:</td>
+							<td align="left"><s:property value="old.email" /></td>
+						</tr>
 					</table>
 				</td>
 			</tr>

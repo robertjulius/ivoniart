@@ -9,18 +9,14 @@
 <sj:head />
 <link rel="stylesheet" href="/ivoniart/css/ivoniart-website.css" type="text/css" />
 <style type="text/css">
-div#userMessage {
-		
-}
+
 </style>
 </head>
 <body>
-	<div id="root">
-		<%@include file="/jsp/website/header.jsp" %>
-		<div id="body">
-			
-		</div>
-		<%@include file="/jsp/website/footer.jsp" %>
-	</div>
+		<%@include file="/jsp/website/header" %>
+			<div id="body">
+				<%@include file="/jsp/website/title-picture-content" %>
+			</div>
+		<%@include file="/jsp/website/footer" %>
 </body>
 </html>

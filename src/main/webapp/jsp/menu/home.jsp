@@ -24,19 +24,17 @@ div#image {
 </style>
 </head>
 <body>
-	<div id="root">
-		<%@include file="/jsp/website/header.jsp" %>
-		<div id="body">
-			<div id="image" class="borderRight borderLeft">
-				<div id="slides">
-					<s:iterator value="menuHome.pictures" status="rowstatus">
-						<img src="<%=request.getContextPath()%>/resources/resource.action?path=images/<s:property value="id" />&resType=image" />											
-					</s:iterator>
-  				</div>
+		<%@include file="/jsp/website/header" %>
+			<div id="body">			
+				<div id="image" class="borderRight borderLeft">
+					<div id="slides">
+						<s:iterator value="menuHome.pictures" status="rowstatus">
+							<img src="<%=request.getContextPath()%>/resources/resource.action?path=images/<s:property value="id" />&resType=image" />											
+						</s:iterator>
+	  				</div>
+				</div>
 			</div>
-		</div>
-		<%@include file="/jsp/website/footer.jsp" %>
-	</div>
+		<%@include file="/jsp/website/footer" %>
 </body>
 <script type="text/javascript">
 	$(function() {

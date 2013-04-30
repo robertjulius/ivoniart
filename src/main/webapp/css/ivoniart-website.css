@@ -91,7 +91,7 @@ div#menuItem:HOVER {
 	color: #00CCFF;
 }
 
-div#body {
+div#bodyContainer {
 	margin: 0 auto;
 	overflow: hidden;
 	width: 100%;
@@ -105,10 +105,20 @@ div#body {
 	border-bottom-color: #0185A0;
 }
 
+div#body {
+	margin: 0 auto;
+	overflow: hidden;
+	display: table;
+}
+
 div#title {
 	font-weight: bold;
 	font-size: 18px;
 	background-color: white;
+	display: table;
+}
+
+div#picture {
 	display: table;
 }
 

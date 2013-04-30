@@ -29,6 +29,7 @@
 			<tr>
 				<td>
 					<table>
+						<s:select key="resource.picture" name="newPictureId" id="newPictureId" list="selectListPicture" listKey="id" listValue="title" theme="xhtml" />
 						<s:textfield key="resource.title" name="newTitle" theme="xhtml" size="30px" />
 						<s:textfield key="resource.address" name="newAddress" theme="xhtml" size="30px" />
 						<s:textfield key="resource.phone" name="newPhone" theme="xhtml" size="30px" />

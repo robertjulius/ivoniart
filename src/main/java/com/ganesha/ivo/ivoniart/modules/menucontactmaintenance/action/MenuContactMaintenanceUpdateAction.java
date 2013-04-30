@@ -18,13 +18,16 @@ public class MenuContactMaintenanceUpdateAction extends
 		SimpleUser user = (SimpleUser) getUserSession().getUser();
 
 		MenuContactMaintenanceForm form = getForm();
+
+		String newPictureId = form.getNewPictureId();
 		String newTitle = form.getNewTitle();
 		String newContent = form.getNewContent();
 		String newAddress = form.getNewAddress();
 		String newPhone = form.getNewPhone();
 		String newEmail = form.getNewEmail();
-		getBL().update(newTitle, newContent, newAddress, newPhone, newEmail,
-				user.getId(), CommonUtils.getCurrentTimestamp());
+		getBL().update(newPictureId, newTitle, newContent, newAddress,
+				newPhone, newEmail, user.getId(),
+				CommonUtils.getCurrentTimestamp());
 
 		return SUCCESS;
 	}

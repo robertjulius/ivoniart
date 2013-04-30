@@ -1,5 +1,6 @@
 package com.ganesha.ivo.ivoniart.model.webitems;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -23,6 +24,7 @@ public class WebItems extends Trackable {
 	@JoinColumn(name = "logo_img")
 	private Picture logoImage;
 
+	@Column(length = 1024)
 	private String copyright;
 
 	@ManyToOne

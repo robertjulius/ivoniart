@@ -9,36 +9,20 @@ import com.ganesha.ivo.ivoniart.websitemenu.WebsiteMenuAction;
 public class MenuContactAction extends WebsiteMenuAction {
 	private static final long serialVersionUID = -2767499531394717306L;
 
-	private MenuContact menuContact;
+	private MenuContact websiteMenu;
 	private GuessMessage guessMessage;
 
 	public MenuContactAction() throws AppException {
-		menuContact = (MenuContact) getDBSession().createCriteria(
+		websiteMenu = (MenuContact) getDBSession().createCriteria(
 				MenuContact.class).uniqueResult();
-	}
-
-	public String getAddress() {
-		return menuContact.getAddress();
-	}
-
-	public String getContent() {
-		return menuContact.getContent();
-	}
-
-	public String getEmail() {
-		return menuContact.getEmail();
 	}
 
 	public GuessMessage getGuessMessage() {
 		return guessMessage;
 	}
 
-	public String getPhone() {
-		return menuContact.getPhone();
-	}
-
-	public String getTitle() {
-		return menuContact.getTitle();
+	public MenuContact getWebsiteMenu() {
+		return websiteMenu;
 	}
 
 	public String saveGuessMessage() throws AppException {
