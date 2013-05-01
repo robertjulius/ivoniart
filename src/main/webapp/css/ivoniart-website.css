@@ -1,34 +1,36 @@
 .borderTop {
 	border-top-style: solid;
 	border-top-width: 1px;
-	border-top-color: #0185A0;
+	border-top-color: #4B2F2C;
 }
 
 .borderRight {
 	border-right-style: solid;
 	border-right-width: 1px;
-	border-right-color: #0185A0;
+	border-right-color: #4B2F2C;
 }
 
 .borderLeft {
 	border-left-style: solid;
 	border-left-width: 1px;
-	border-left-color: #0185A0;
+	border-left-color: #4B2F2C;
 }
 
 .borderBottom {
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
-	border-bottom-color: #0185A0;
+	border-bottom-color: #4B2F2C;
 }
 
 body {
-	background-color: #00151A;
+	background-color: #4B2F2C;
 	background-image: url('/ivoniart/resources/resource.action?path=images/background&resType=image');
 	background-repeat: no-repeat;
+	background-attachment:fixed;
 	margin: 0;
 	white-space: normal;
 	color: #749CA1;
+	background-size: 100%;
 }
 
 div#root {
@@ -61,7 +63,7 @@ div#menuStrip {
 	width: 100%;
 	padding-top: 5px;
 	padding-bottom: 5px;
-	background-color: rgba(1, 133, 160, 0.10);
+	background-color: rgba(0, 0, 0, 0.50);
 }
 
 div#menuBar {
@@ -104,17 +106,17 @@ div#bodyContainer {
 	overflow: hidden;
 	width: 100%;
 	display: table;
-	background-color: rgba(1, 133, 160, 0.10);
+	background-color: rgba(0, 0, 0, 0.50);
 	border-top-style: solid;
 	border-top-width: 1px;
-	border-top-color: #0185A0;
+	border-top-color: #4B2F2C;
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
-	border-bottom-color: #0185A0;
+	border-bottom-color: #4B2F2C;
 }
 
 div#body {
-	background-color: rgba(1, 133, 160, 0.20);
+	background-color: rgba(0, 0, 0, 0.75);
 	margin: 0 auto;
 	overflow: hidden;
 	display: table;
@@ -146,7 +148,7 @@ div#footer {
 	overflow: hidden;
 	display: table;
 	margin-top: 10px;
-	background-color: rgba(1, 133, 160, 0.10);
+	background-color: rgba(0, 0, 0, 0.50);
 	color: white;
 }
 
