@@ -9,18 +9,10 @@
 			</div>
 			<div id="menuStrip" class="borderTop borderBottom">
 				<div id="menuBar">
-					<div id="menuItem">
-						<a href="<%=request.getContextPath()%>/menu/home.action">Home</a>
-					</div>
-					<div id="menuItem">
-						<a href="<%=request.getContextPath()%>/menu/about.action">About</a>
-					</div>
-					<div id="menuItem">
-						<a href="<%=request.getContextPath()%>/menu/services.action">Services</a>
-					</div>
-					<div id="menuItem">
-						<a href="<%=request.getContextPath()%>/menu/contact.action">Contact</a>
-					</div>
+					<a class="menuItem" id="home" href="<%=request.getContextPath()%>/menu/home.action">Home</a>
+					<a class="menuItem" id="about" href="<%=request.getContextPath()%>/menu/about.action">About</a>
+					<a class="menuItem" id="services" href="<%=request.getContextPath()%>/menu/services.action">Services</a>
+					<a class="menuItem" id="contact" href="<%=request.getContextPath()%>/menu/contact.action">Contact</a>
 				</div>
 			</div>
 		</div>

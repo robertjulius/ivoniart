@@ -1,0 +1,13 @@
+<script type="text/javascript">
+	$(function() {	
+		$(".menuItem").click(function() {
+			this.href += "?menuItemActive=" + this.id;
+		});
+		
+		var menuItemActive = "<s:property value="menuItemActive" />";
+		if (menuItemActive != null) {
+			$("#" + menuItemActive).addClass('menuItemActive');
+			var a = 1;
+		}
+	});
+</script>

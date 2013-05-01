@@ -70,7 +70,7 @@ div#menuBar {
 	display: table;
 }
 
-div#menuItem {
+a.menuItem {
 	color: #CCCCCC;
 	float: left;
 	font-weight: bold;
@@ -78,6 +78,9 @@ div#menuItem {
 	padding-bottom: 5px;
 	padding-left: 20px;
 	padding-right: 20px;
+	border: solid;
+	border-width: 1px;
+	border-color: transparent;
 }
 
 div#menuItem a {
@@ -85,9 +88,14 @@ div#menuItem a {
 	color: inherit;
 }
 
-div#menuItem:HOVER {
+a.menuItem:HOVER {
 	cursor: hand;
 	cursor: pointer;
+	border-color: #00CCFF;
+	color: #00CCFF;
+}
+
+a.menuItemActive {
 	color: #00CCFF;
 }
 
@@ -111,8 +119,7 @@ div#body {
 	overflow: hidden;
 	display: table;
 	width: 500px;
-	padding-left: 50px;
-	padding-right: 50px;
+	padding: 50px;
 }
 
 div#title {

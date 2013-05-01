@@ -66,6 +66,7 @@ div#image {
 				// [number] restart delay on inactive slideshow
 			}
 		});
-	});	
+	});
 </script>
+<%@include file="/jsp/website/menu_item_active" %>
 </html>

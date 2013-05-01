@@ -56,4 +56,5 @@ div#addressAndPhone {
 				</div>
 		<%@include file="/jsp/website/footer" %>
 </body>
+<%@include file="/jsp/website/menu_item_active" %>
 </html>

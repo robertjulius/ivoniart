@@ -35,11 +35,19 @@ public abstract class WebsiteMenuAction extends BaseAction {
 		}
 	}
 
+	public String getMenuItemActive() {
+		return (String) getSession().get("menuItemActive");
+	}
+
 	public final void rollback() throws AppException {
 		try {
 			HibernateSessionFactory.getSession().getTransaction().rollback();
 		} catch (HibernateException e) {
 			throw new AppException(e);
 		}
+	}
+
+	public void setMenuItemActive(String menuItemActive) {
+		getSession().put("menuItemActive", menuItemActive);
 	}
 }
