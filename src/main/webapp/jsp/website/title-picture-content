@@ -3,7 +3,7 @@
 					<p><s:property value="websiteMenu.title" escape="false" /></p>
 				</div>
 				<div id="picture">
-					<p><img src="<%=request.getContextPath()%>/resources/resource.action?path=images/<s:property value="websiteMenu.picture.id" />&resType=image" height="150px"/></p>
+					<p><img src="<%=request.getContextPath()%>/resources/resource.action?path=images/<s:property value="websiteMenu.picture.id" />&resType=image" height="150px" class="imageFrame" /></p>
 				</div>
 				<div id="content">
 					<p><s:property value="websiteMenu.content" escape="false" /></p>
