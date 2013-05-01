@@ -1,10 +1,10 @@
 
 				<div id="title">
-					<s:property value="websiteMenu.title" escape="false" />
+					<p><s:property value="websiteMenu.title" escape="false" /></p>
 				</div>
 				<div id="picture">
-					<img src="<%=request.getContextPath()%>/resources/resource.action?path=images/<s:property value="websiteMenu.picture.id" />&resType=image" height="150px"/>
+					<p><img src="<%=request.getContextPath()%>/resources/resource.action?path=images/<s:property value="websiteMenu.picture.id" />&resType=image" height="150px"/></p>
 				</div>
 				<div id="content">
-					<s:property value="websiteMenu.content" escape="false" />
+					<p><s:property value="websiteMenu.content" escape="false" /></p>
 				</div>

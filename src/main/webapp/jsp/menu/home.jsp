@@ -11,15 +11,24 @@
 <link rel="stylesheet" href="/ivoniart/css/ivoniart-jquery-slides.css" type="text/css" />
 <link rel="stylesheet" href="/ivoniart/css/ivoniart-website.css" type="text/css" />
 <style type="text/css">
-div#header {
-	height: 200px;
+div#logoStrip {
+	height: 150px;
+}
+
+div#logo {
+	top: 60px;
+}
+
+div#body {
+	padding: 0px;
 }
 
 div#image {
 	margin: 0 auto;
 	overflow: hidden;
-	display: table;
-	width: 500px;
+	width: 800px;
+	height: 350px;
+	overflow: hidden;
 }
 </style>
 </head>

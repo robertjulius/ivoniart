@@ -2,8 +2,10 @@
 <%@page import="com.ganesha.basicweb.utility.PropertiesConstants"%>
 	<div id="root">
 		<div id="header">
-			<div id="logo">
-				<img src="<%=request.getContextPath()%>/resources/resource.action?path=images/<%=SystemSetting.getProperty(PropertiesConstants.WEB_ITEMS_IMAGE_LOGO)%>&resType=image" />
+			<div id="logoStrip">
+				<div id="logo">
+					<img src="<%=request.getContextPath()%>/resources/resource.action?path=images/<%=SystemSetting.getProperty(PropertiesConstants.WEB_ITEMS_IMAGE_LOGO)%>&resType=image" height="50px"/>
+				</div>
 			</div>
 			<div id="menuStrip" class="borderTop borderBottom">
 				<div id="menuBar">

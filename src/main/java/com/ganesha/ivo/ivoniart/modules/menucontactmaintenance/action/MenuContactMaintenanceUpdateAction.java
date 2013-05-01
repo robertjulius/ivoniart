@@ -34,8 +34,11 @@ public class MenuContactMaintenanceUpdateAction extends
 
 	public String prepareUpdate() throws AppException {
 		MenuContactMaintenanceForm form = getForm();
+
 		form.clearForm("new");
 		form.assignFromEntity("new", form.getOld());
+
+		form.setNewPictureId(form.getOld().getPicture().getId());
 
 		return SUCCESS;
 	}

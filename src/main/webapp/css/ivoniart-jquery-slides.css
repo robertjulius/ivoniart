@@ -4,9 +4,10 @@
 }
 
 a.slidesjs-next {
-	right: 50px;
-	background-image: url('/ivoniart/resources/resource.action?path=images/jquery-slides/btn-next.png&resType=image');
-	opacity: 0.5;
+	right: 30px;
+	background-image: url('/ivoniart/resources/resource.action?path=images/jquery-slides/arrows.png&resType=image');
+	background-position: -34px;
+	opacity: 0.2;
 }
 
 a:hover.slidesjs-next {
@@ -14,9 +15,9 @@ a:hover.slidesjs-next {
 }
 
 a.slidesjs-previous {
-	left: 50px;
-	background-image: url('/ivoniart/resources/resource.action?path=images/jquery-slides/btn-prev.png&resType=image');
-	opacity: 0.5;
+	left: 30px;
+	background-image: url('/ivoniart/resources/resource.action?path=images/jquery-slides/arrows.png&resType=image');
+	opacity: 0.2;
 }
 
 a:hover.slidesjs-previous {
@@ -24,8 +25,8 @@ a:hover.slidesjs-previous {
 }
 
 a.slidesjs-next, a.slidesjs-previous, .slidesjs-pagination, a.slidesjs-stop, a.slidesjs-play {
-	display: block;
-	bottom: 20px;
+	display: table;
+	top: 150px;
 	overflow: hidden;
 	z-index: 10;
 	position: absolute;
@@ -33,8 +34,8 @@ a.slidesjs-next, a.slidesjs-previous, .slidesjs-pagination, a.slidesjs-stop, a.s
 }
 
 a.slidesjs-next, a.slidesjs-previous, a.slidesjs-stop, a.slidesjs-play {
-	width: 12px;
-	height: 18px;
+	width: 34px;
+	height: 60px;
 	text-indent: -9999px;
 }
 
