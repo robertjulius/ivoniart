@@ -41,8 +41,14 @@
 		</action>
 
 	</package>
-	
-	<include file="com/ganesha/basicweb/modules/login/login-struts.xml"></include>
+
+	<package name="login" extends="basicweb" namespace="/modules/login">
+		<action name="executeLogin" class="loginExecuteAction">
+			<result name="input">/jsp/modules/login/login.jsp</result>
+			<result name="success">/jsp/main/main.jsp</result>
+		</action>
+	</package>
+
 	<include file="com/ganesha/basicweb/modules/logout/logout-struts.xml"></include>
 	<include file="com/ganesha/basicweb/modules/resetusersession/resetusersession-struts.xml"></include>
 	<include file="com/ganesha/basicweb/modules/module/modulemaintenance-struts.xml"></include>
