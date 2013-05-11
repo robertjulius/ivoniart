@@ -32,13 +32,6 @@
 			<version>2.3.1.2</version>
 		</dependency>
 
-		<!-- Log4j logging (Struts 2 Hibernate Plugins dependency) -->
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.9</version>
-		</dependency>
-
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.apache.struts</groupId>
@@ -82,21 +75,7 @@
 			<version>3.4.0</version>
 		</dependency>
 
-		<!-- Hibernate validator (Struts 2 Hibernate Plugins dependency) -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>3.1.0.GA</version>
-		</dependency>
-
-		<!-- Hibernate core -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate</artifactId>
-			<version>3.2.7.ga</version>
-		</dependency>
-
-		<!-- Hibernate core library dependency start -->
+		<!-- Hibernate library dependecy start -->
 		<dependency>
 			<groupId>dom4j</groupId>
 			<artifactId>dom4j</artifactId>
@@ -117,16 +96,24 @@
 			<artifactId>cglib</artifactId>
 			<version>2.2</version>
 		</dependency>
-		<!-- Hibernate core library dependency end -->
-
-		<!-- Hibernate query library dependency start -->
 		<dependency>
-			<groupId>antlr</groupId>
-			<artifactId>antlr</artifactId>
-			<version>2.7.7</version>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-annotations</artifactId>
+			<version>3.4.0.GA</version>
 		</dependency>
-		<!-- Hibernate query library dependency end -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-commons-annotations</artifactId>
+			<version>3.1.0.GA</version>
+		</dependency>
+		<!-- Hibernate library dependecy end -->
 
+		<dependency>
+			<groupId>javax.transaction</groupId>
+			<artifactId>jta</artifactId>
+			<version>1.1</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>javax.persistence</groupId>
 			<artifactId>persistence-api</artifactId>
