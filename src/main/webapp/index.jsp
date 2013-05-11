@@ -7,6 +7,6 @@
 	<h2>Hello World!</h2>
 	
 	<p><a href="<%=request.getContextPath() %>/jsp/modules/login/login.jsp">Login</a></p>
-	<p><a href="<s:url action="index" namespace="config-browser" />">Launch the configuration browser</a></p>
+	<p><a href="<%=request.getContextPath() %>/config-browser/index.action">Launch the configuration browser</a></p>
 </body>
 </html>
