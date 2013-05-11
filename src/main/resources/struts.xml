@@ -10,7 +10,7 @@
 	<constant name="struts.action.extension" value="action"/>
 	<constant name="struts.multipart.maxSize" value="10000000" />
 
-	<package name="basicweb" extends="struts-default" namespace="/main">
+	<package name="basicweb" extends="struts-default" namespace="/ivoniart/main">
 		<interceptors>
 			<interceptor-stack name="appDefault">
 				<interceptor-ref name="timer" />
