@@ -19,7 +19,7 @@ public class HtmlMenuGenerator {
 
 	public static HashMap<String, Privilege> registerAllModule(
 			List<Module> modules) {
-		HashMap<String, Privilege> privileges = new HashMap<>();
+		HashMap<String, Privilege> privileges = new HashMap<String, Privilege>();
 		for (Module module : modules) {
 			registerAllModule(module, privileges);
 		}

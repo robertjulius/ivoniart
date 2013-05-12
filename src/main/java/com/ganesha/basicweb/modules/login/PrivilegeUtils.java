@@ -93,7 +93,7 @@ public class PrivilegeUtils {
 
 	private static String[] getValidPrivilegeIds(String[] privilegeIds,
 			ArrayList<Privilege> leafs) {
-		List<String> valid = new ArrayList<>();
+		List<String> valid = new ArrayList<String>();
 		for (String privilegeId : privilegeIds) {
 			for (Privilege leaf : leafs) {
 				if (privilegeId.equals(leaf.getId())) {

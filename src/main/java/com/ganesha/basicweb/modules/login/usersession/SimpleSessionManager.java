@@ -16,7 +16,7 @@ import com.ganesha.core.exception.AppException;
 
 public class SimpleSessionManager implements SessionManager {
 
-	private Map<String, HttpSession> mapByUserId = new ConcurrentHashMap<>();
+	private Map<String, HttpSession> mapByUserId = new ConcurrentHashMap<String, HttpSession>();
 
 	@Override
 	public HttpSession getBySessionId(String sessionId) {
@@ -36,7 +36,7 @@ public class SimpleSessionManager implements SessionManager {
 
 	@Override
 	public List<HttpSession> getSessions() {
-		List<HttpSession> httpSessions = new ArrayList<>();
+		List<HttpSession> httpSessions = new ArrayList<HttpSession>();
 		Iterator<String> iterator = mapByUserId.keySet().iterator();
 		while (iterator.hasNext()) {
 			String key = iterator.next();
@@ -47,7 +47,7 @@ public class SimpleSessionManager implements SessionManager {
 	}
 
 	public List<UserSession> getUserSessions() {
-		List<UserSession> userSessions = new ArrayList<>();
+		List<UserSession> userSessions = new ArrayList<UserSession>();
 		Iterator<String> iterator = mapByUserId.keySet().iterator();
 		while (iterator.hasNext()) {
 			String key = iterator.next();

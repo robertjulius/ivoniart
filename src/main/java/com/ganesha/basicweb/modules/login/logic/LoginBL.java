@@ -79,7 +79,7 @@ public class LoginBL extends BusinessLogic {
 		LoggerFactory.getLogger(getClass()).debug(
 				"Begin to prepare access path");
 
-		List<String> result = new ArrayList<>();
+		List<String> result = new ArrayList<String>();
 		List<Module> modules = ((SimpleUser) user).getUserGroup().getModules();
 		for (Module module : modules) {
 			List<AccessPath> accessPaths = module.getAccessPaths();
@@ -101,7 +101,7 @@ public class LoginBL extends BusinessLogic {
 
 		List<Module> modules = ((SimpleUser) user).getUserGroup().getModules();
 
-		List<String> privilegeIds = new ArrayList<>();
+		List<String> privilegeIds = new ArrayList<String>();
 		for (Module module : modules) {
 			privilegeIds.add(module.getId());
 		}

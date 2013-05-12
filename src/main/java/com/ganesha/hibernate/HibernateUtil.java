@@ -9,11 +9,12 @@ import org.slf4j.LoggerFactory;
 
 public class HibernateUtil {
 
-	private static final SessionFactory sessionFactory;
+	private static final SessionFactory sessionFactory = createSessionFactory();
 	public static final ThreadLocal<Session> threadSession = new ThreadLocal<Session>();
 	public static final ThreadLocal<Transaction> threadTransaction = new ThreadLocal<Transaction>();
 
-	static {
+	private static SessionFactory createSessionFactory() {
+		SessionFactory sessionFactory = null;
 		try {
 			sessionFactory = new AnnotationConfiguration().configure()
 					.buildSessionFactory();
@@ -21,8 +22,8 @@ public class HibernateUtil {
 			LoggerFactory.getLogger(HibernateUtil.class).error(
 					"Initial SessionFactory creation failed:" + e.getMessage(),
 					e);
-			throw e;
 		}
+		return sessionFactory;
 	}
 
 	public static void beginTransaction() {

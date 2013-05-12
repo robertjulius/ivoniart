@@ -131,7 +131,7 @@ public class UserGroupMaintenanceBL extends BusinessLogic {
 
 		criteria.setFirstResult(0);
 		criteria.setMaxResults(1);
-		int rowCount = (int) criteria.setProjection(Projections.rowCount())
+		int rowCount = (Integer) criteria.setProjection(Projections.rowCount())
 				.uniqueResult();
 		pagination.setRowCount(rowCount);
 

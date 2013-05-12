@@ -71,7 +71,7 @@ public abstract class FormBean implements Serializable {
 	private <T> Map<String, Object> toMap(T entity, PrefixMode prefixMode,
 			String prefix) throws AppException {
 		try {
-			Map<String, Object> map = new HashMap<>();
+			Map<String, Object> map = new HashMap<String, Object>();
 			Method[] methods = entity.getClass().getMethods();
 			for (Method method : methods) {
 				if (method.getName().startsWith("get")) {

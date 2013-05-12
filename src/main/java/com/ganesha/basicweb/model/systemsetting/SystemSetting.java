@@ -15,7 +15,7 @@ import com.ganesha.basicweb.model.TableEntity;
 public class SystemSetting implements TableEntity {
 
 	private static final long serialVersionUID = -2855686542697649307L;
-	private static final Map<String, String> map = new ConcurrentHashMap<>();
+	private static final Map<String, String> map = new ConcurrentHashMap<String, String>();
 
 	@Id
 	private String id;

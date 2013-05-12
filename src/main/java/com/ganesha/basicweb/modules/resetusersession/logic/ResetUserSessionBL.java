@@ -23,7 +23,7 @@ public class ResetUserSessionBL extends BusinessLogic {
 	public List<SimpleUserSession> getList() throws AppException {
 		List<UserSession> userSessions = ((SimpleSessionManager) AppContextManager
 				.getSessionManager()).getUserSessions();
-		List<SimpleUserSession> simpleUserSessions = new ArrayList<>();
+		List<SimpleUserSession> simpleUserSessions = new ArrayList<SimpleUserSession>();
 		for (UserSession userSession : userSessions) {
 			simpleUserSessions.add((SimpleUserSession) userSession);
 		}

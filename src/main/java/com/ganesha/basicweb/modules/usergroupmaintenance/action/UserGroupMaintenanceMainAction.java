@@ -27,7 +27,7 @@ public class UserGroupMaintenanceMainAction extends UserGroupMaintenanceAction {
 		List<Module> rootModules = getBL().getRootModules();
 
 		List<Module> modules = getBL().getChildModules();
-		List<String> privilegeIds = new ArrayList<>();
+		List<String> privilegeIds = new ArrayList<String>();
 		for (Module module : modules) {
 			privilegeIds.add(module.getId());
 		}
@@ -54,7 +54,7 @@ public class UserGroupMaintenanceMainAction extends UserGroupMaintenanceAction {
 		form.setOld(userGroup);
 
 		List<Module> modules = form.getOld().getModules();
-		List<String> privilegeIds = new ArrayList<>();
+		List<String> privilegeIds = new ArrayList<String>();
 		for (Module module : modules) {
 			privilegeIds.add(module.getId());
 		}

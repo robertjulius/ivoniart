@@ -124,7 +124,7 @@ public class MappingUtils {
 	public static Map<String, Object> pojoToMap(Object pojo)
 			throws AppException {
 		try {
-			Map<String, Object> map = new HashMap<>();
+			Map<String, Object> map = new HashMap<String, Object>();
 			Method[] methods = pojo.getClass().getMethods();
 			for (Method method : methods) {
 				if (method.getName().startsWith("get")) {
