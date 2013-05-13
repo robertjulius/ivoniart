@@ -11,7 +11,7 @@
 <body>
 	<table>
 		<tr>
-			<td class="pageTitle1"><s:text name="resource.page.title" /></td> 
+			<td class="pageTitle1"><s:text name="resource.page.title.moduleMaintenance" /></td> 
 		</tr>
 		<tr>
 			<td class="pageTitle2"><s:text name="resource.page.title2.confirmUpdate" /></td>

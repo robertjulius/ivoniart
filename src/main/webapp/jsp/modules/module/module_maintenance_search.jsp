@@ -16,7 +16,7 @@
 		<tr>
 			<td>
 				<h1>
-					<s:text name="resource.page.title" />
+					<s:text name="resource.page.title.moduleMaintenance" />
 				</h1>
 			</td>
 		</tr>

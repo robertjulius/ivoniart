@@ -12,7 +12,7 @@
 <body>
 	<table>
 		<tr>
-			<td class="pageTitle1"><s:text name="resource.page.title" /></td> 
+			<td class="pageTitle1"><s:text name="resource.page.title.menuAboutMaintenance" /></td> 
 		</tr>
 		<tr>
 			<td class="pageTitle2"><s:text name="resource.page.title2.update" /></td>
